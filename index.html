@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandra — Soul-Centered Guidance</title>
+<meta name="description" content="Reconnect to your soul, your wisdom, and your path. 1:1 channeling sessions, doula support, and guided meditations with Chandra.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  /* Palette */
+  --cream: #F6F1EB;
+  --cream-dark: #EDE6DC;
+  --parchment: #FAF7F3;
+  --brown-deep: #3A2C27;
+  --brown-warm: #5C4A3E;
+  --brown-mid: #8B7355;
+  --terracotta: #C08468;
+  --terracotta-light: #D4A08A;
+  --clay: #B07A62;
+  --sand: #D4C5B2;
+  --sage: #9BA88D;
+  --sage-muted: #B5BFA9;
+  --gold: #B8976A;
+  --gold-light: #D4BC96;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans: 'Jost', 'Helvetica Neue', sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-2xl: 10rem;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--brown-deep);
+  background-color: var(--cream);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  overflow-x: hidden;
+}
+
+/* Grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+::selection {
+  background: var(--terracotta-light);
+  color: var(--brown-deep);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+}
+
+p {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  max-width: 38em;
+}
+
+.serif { font-family: var(--font-serif); }
+.italic { font-style: italic; }
+.light { font-weight: 300; }
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.container--narrow {
+  max-width: 800px;
+}
+
+.container--wide {
+  max-width: 1400px;
+}
+
+section {
+  padding: var(--space-xl) 0;
+}
+
+/* ============================================
+   DIVIDERS
+   ============================================ */
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--sand);
+  margin: var(--space-lg) 0;
+}
+
+.divider--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.divider--wide {
+  width: 100%;
+  background: var(--cream-dark);
+}
+
+/* Small decorative dot */
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  display: inline-block;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: var(--space-sm) 0;
+  transition: all 0.5s var(--ease-smooth);
+  background: transparent;
+}
+
+.nav.scrolled {
+  background: rgba(246, 241, 235, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(58, 44, 39, 0.06);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.5rem var(--space-md);
+}
+
+.nav__logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--brown-deep);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav__link {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brown-warm);
+  transition: color 0.3s ease;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+}
+
+.nav__link:hover,
+.nav__link.active {
+  color: var(--terracotta);
+}
+
+.nav__cta {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brown-deep);
+  padding: 0.65rem 1.5rem;
+  border: 1px solid var(--brown-deep);
+  transition: all 0.4s var(--ease-smooth);
+  cursor: pointer;
+  background: none;
+  font-family: var(--font-sans);
+}
+
+.nav__cta:hover {
+  background: var(--brown-deep);
+  color: var(--cream);
+}
+
+/* Mobile menu */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav__hamburger span {
+  width: 22px;
+  height: 1px;
+  background: var(--brown-deep);
+  transition: all 0.3s ease;
+}
+
+.nav__hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+.nav__hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav__hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* Mobile overlay */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--cream);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-smooth);
+}
+
+.mobile-menu.visible {
+  display: flex;
+  opacity: 1;
+}
+
+.mobile-menu button {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 300;
+  background: none;
+  border: none;
+  color: var(--brown-deep);
+  cursor: pointer;
+  padding: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu button:hover {
+  color: var(--terracotta);
+}
+
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__cta.desktop-only { display: none; }
+  .nav__hamburger { display: flex; }
+}
+
+/* ============================================
+   PAGES / VIEWS
+   ============================================ */
+.page {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-smooth);
+  min-height: 100vh;
+}
+
+.page.active {
+  display: block;
+}
+
+.page.visible {
+  opacity: 1;
+}
+
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.2rem;
+  border: 1px solid var(--brown-deep);
+  color: var(--brown-deep);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-smooth);
+}
+
+.btn:hover {
+  background: var(--brown-deep);
+  color: var(--cream);
+}
+
+.btn--filled {
+  background: var(--brown-deep);
+  color: var(--cream);
+}
+
+.btn--filled:hover {
+  background: var(--brown-warm);
+  border-color: var(--brown-warm);
+}
+
+.btn--ghost {
+  border-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn--ghost:hover {
+  background: transparent;
+  color: var(--terracotta);
+  border-color: transparent;
+}
+
+.btn--ghost::after {
+  content: ' →';
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.btn--ghost:hover::after {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   IMAGE PLACEHOLDERS
+   ============================================ */
+.img-placeholder {
+  background: var(--cream-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.img-placeholder::after {
+  content: attr(data-description);
+  position: absolute;
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+  font-size: 0.7rem;
+  color: var(--brown-mid);
+  font-style: italic;
+  font-family: var(--font-serif);
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
+/* Warm gradient overlay for atmosphere */
+.img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(192, 132, 104, 0.08) 0%,
+    rgba(184, 151, 106, 0.05) 50%,
+    rgba(155, 168, 141, 0.06) 100%
+  );
+}
+
+/* ============================================
+   HOME PAGE
+   ============================================ */
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+  position: relative;
+}
+
+.hero__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.hero__text {
+  padding-right: var(--space-lg);
+}
+
+.hero__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: var(--space-md);
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.3s forwards;
+}
+
+.hero h1 {
+  margin-bottom: var(--space-md);
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.5s forwards;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+.hero__sub {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  color: var(--brown-warm);
+  margin-bottom: var(--space-lg);
+  line-height: 1.8;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.7s forwards;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.9s forwards;
+}
+
+.hero__image {
+  aspect-ratio: 3/4;
+  opacity: 0;
+  animation: fadeIn 1.2s var(--ease-out) 0.6s forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 7rem;
+    padding-bottom: var(--space-lg);
+  }
+  .hero__content {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  .hero__text {
+    padding-right: 0;
+    order: 2;
+  }
+  .hero__image {
+    order: 1;
+    aspect-ratio: 4/3;
+    max-height: 50vh;
+  }
+  .hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Introduction */
+.intro {
+  padding: var(--space-2xl) 0;
+  text-align: center;
+}
+
+.intro p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--brown-warm);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.intro p em {
+  color: var(--terracotta);
+  font-style: italic;
+}
+
+/* Offerings Grid */
+.offerings-preview {
+  padding: var(--space-xl) 0 var(--space-2xl);
+}
+
+.offerings-preview__header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.offerings-preview__header h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.offering-card {
+  padding: var(--space-lg) var(--space-md);
+  border: 1px solid var(--cream-dark);
+  transition: all 0.5s var(--ease-smooth);
+  position: relative;
+}
+
+.offering-card:hover {
+  border-color: var(--sand);
+  background: var(--parchment);
+}
+
+.offering-card__number {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--cream-dark);
+  margin-bottom: var(--space-md);
+  line-height: 1;
+}
+
+.offering-card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.offering-card p {
+  color: var(--brown-warm);
+  font-size: 0.92rem;
+  margin-bottom: var(--space-md);
+}
+
+.offering-card .tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--sage);
+  border: 1px solid var(--sage-muted);
+  padding: 0.3rem 0.8rem;
+  margin-bottom: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .offerings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Transformation */
+.transformation {
+  padding: var(--space-2xl) 0;
+  background: var(--parchment);
+}
+
+.transformation__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.transformation__image {
+  aspect-ratio: 4/5;
+}
+
+.transformation__text h2 {
+  margin-bottom: var(--space-md);
+}
+
+.transformation__list {
+  list-style: none;
+  margin-top: var(--space-md);
+}
+
+.transformation__list li {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--brown-warm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.transformation__list li:last-child {
+  border-bottom: none;
+}
+
+.transformation__list li span {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .transformation__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* About Preview */
+.about-preview {
+  padding: var(--space-2xl) 0;
+  text-align: center;
+}
+
+.about-preview__image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto var(--space-lg);
+}
+
+.about-preview h2 {
+  margin-bottom: var(--space-md);
+}
+
+.about-preview p {
+  margin: 0 auto var(--space-md);
+  color: var(--brown-warm);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: var(--space-2xl) 0;
+  background: var(--brown-deep);
+  color: var(--cream);
+}
+
+.testimonials__header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.testimonials__header .uppercase {
+  color: var(--terracotta-light);
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.testimonial {
+  padding: var(--space-lg);
+  border-left: 1px solid var(--brown-warm);
+}
+
+.testimonial__quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--cream-dark);
+  margin-bottom: var(--space-md);
+}
+
+.testimonial__quote::before {
+  content: '"';
+  font-size: 3rem;
+  line-height: 0;
+  vertical-align: -0.5em;
+  color: var(--terracotta);
+  margin-right: 0.1em;
+}
+
+.testimonial__author {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brown-mid);
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Closing CTA */
+.closing-cta {
+  padding: var(--space-2xl) 0;
+  text-align: center;
+}
+
+.closing-cta h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.closing-cta p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  font-style: italic;
+  color: var(--brown-warm);
+  margin: 0 auto var(--space-lg);
+}
+
+.closing-cta__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+@media (max-width: 480px) {
+  .closing-cta__actions {
+    flex-direction: column;
+  }
+}
+
+/* ============================================
+   ABOUT PAGE
+   ============================================ */
+.page-header {
+  padding: calc(var(--space-2xl) + 4rem) 0 var(--space-xl);
+  text-align: center;
+}
+
+.page-header .uppercase {
+  color: var(--terracotta);
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.page-header h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.about-portrait {
+  padding: 0 0 var(--space-xl);
+}
+
+.about-portrait__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.about-portrait__image {
+  aspect-ratio: 3/4;
+}
+
+.about-portrait__text p {
+  color: var(--brown-warm);
+  margin-bottom: var(--space-sm);
+  line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+  .about-portrait__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.story-section {
+  padding: var(--space-xl) 0;
+}
+
+.story-section__inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.story-section .uppercase {
+  color: var(--terracotta);
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.story-section h2 {
+  margin-bottom: var(--space-md);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.story-section p {
+  color: var(--brown-warm);
+  margin-bottom: var(--space-sm);
+  line-height: 1.9;
+}
+
+.philosophy {
+  padding: var(--space-2xl) 0;
+  background: var(--parchment);
+  text-align: center;
+}
+
+.philosophy h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.philosophy__tenets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.philosophy__tenet {
+  padding: var(--space-md);
+}
+
+.philosophy__tenet p {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--brown-warm);
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .philosophy__tenets {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   OFFERINGS PAGE
+   ============================================ */
+.offering-detail {
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.offering-detail:last-of-type {
+  border-bottom: none;
+}
+
+.offering-detail__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.offering-detail__inner.reverse {
+  direction: rtl;
+}
+
+.offering-detail__inner.reverse > * {
+  direction: ltr;
+}
+
+.offering-detail__image {
+  aspect-ratio: 4/5;
+}
+
+.offering-detail__number {
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  font-weight: 300;
+  color: var(--cream-dark);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.offering-detail__eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: var(--space-sm);
+}
+
+.offering-detail h2 {
+  margin-bottom: var(--space-md);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+.offering-detail p {
+  color: var(--brown-warm);
+  margin-bottom: var(--space-sm);
+  line-height: 1.9;
+}
+
+.offering-detail ul {
+  list-style: none;
+  margin: var(--space-md) 0;
+}
+
+.offering-detail ul li {
+  padding: 0.5rem 0;
+  color: var(--brown-warm);
+  font-size: 0.95rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.offering-detail ul li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--terracotta);
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .offering-detail__inner,
+  .offering-detail__inner.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+}
+
+/* ============================================
+   BOOK PAGE
+   ============================================ */
+.book-details {
+  padding: var(--space-xl) 0;
+}
+
+.book-details__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.book-info h2 {
+  margin-bottom: var(--space-md);
+}
+
+.book-info p {
+  color: var(--brown-warm);
+  margin-bottom: var(--space-sm);
+  line-height: 1.8;
+}
+
+.session-meta {
+  margin: var(--space-md) 0;
+}
+
+.session-meta__item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--cream-dark);
+  font-size: 0.92rem;
+}
+
+.session-meta__label {
+  color: var(--brown-mid);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  font-weight: 400;
+}
+
+.session-meta__value {
+  color: var(--brown-deep);
+  font-weight: 400;
+}
+
+.calendar-placeholder {
+  background: var(--parchment);
+  border: 1px dashed var(--sand);
+  padding: var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 400px;
+}
+
+.calendar-placeholder p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--brown-mid);
+  font-size: 1.1rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .book-details__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.policies {
+  padding: var(--space-xl) 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.policies h3 {
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+.policies p {
+  color: var(--brown-warm);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-sm);
+  line-height: 1.8;
+}
+
+/* ============================================
+   CONTACT PAGE
+   ============================================ */
+.contact-section {
+  padding: var(--space-xl) 0;
+}
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.contact__info h2 {
+  margin-bottom: var(--space-md);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.contact__info p {
+  color: var(--brown-warm);
+  margin-bottom: var(--space-md);
+  line-height: 1.8;
+}
+
+.contact__links {
+  list-style: none;
+}
+
+.contact__links li {
+  padding: 0.6rem 0;
+}
+
+.contact__links a {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brown-warm);
+  transition: color 0.3s ease;
+  font-weight: 400;
+}
+
+.contact__links a:hover {
+  color: var(--terracotta);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brown-mid);
+  font-weight: 400;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--brown-deep);
+  background: var(--parchment);
+  border: 1px solid var(--cream-dark);
+  padding: 0.85rem 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--terracotta-light);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B7355' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .contact__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  padding: var(--space-xl) 0 var(--space-lg);
+  border-top: 1px solid var(--cream-dark);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.footer__brand {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  margin-bottom: var(--space-sm);
+}
+
+.footer__tagline {
+  font-size: 0.85rem;
+  color: var(--brown-mid);
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer__nav button {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brown-warm);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: 400;
+}
+
+.footer__nav button:hover {
+  color: var(--terracotta);
+}
+
+.footer__social {
+  text-align: right;
+}
+
+.footer__social-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+
+.footer__social-links a {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brown-warm);
+  transition: color 0.3s ease;
+  font-weight: 400;
+}
+
+.footer__social-links a:hover {
+  color: var(--terracotta);
+}
+
+.footer__bottom {
+  text-align: center;
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--cream-dark);
+}
+
+.footer__bottom p {
+  font-size: 0.7rem;
+  color: var(--brown-mid);
+  margin: 0 auto;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-md);
+  }
+  .footer__nav { align-items: center; }
+  .footer__social { text-align: center; }
+  .footer__social-links { align-items: center; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============================================
+     NAVIGATION
+     ============================================ -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="#" onclick="navigateTo('home'); return false;">Chandra</a>
+
+    <ul class="nav__links">
+      <li><button class="nav__link active" data-page="home">Home</button></li>
+      <li><button class="nav__link" data-page="about">About</button></li>
+      <li><button class="nav__link" data-page="offerings">Offerings</button></li>
+      <li><button class="nav__link" data-page="contact">Contact</button></li>
+      <li><button class="nav__cta desktop-only" data-page="book">Book a Session</button></li>
+    </ul>
+
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button data-page="home">Home</button>
+  <button data-page="about">About</button>
+  <button data-page="offerings">Offerings</button>
+  <button data-page="book">Book</button>
+  <button data-page="contact">Contact</button>
+</div>
+
+
+<!-- ============================================
+     HOME PAGE
+     ============================================ -->
+<div class="page active" id="page-home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container container--wide">
+      <div class="hero__content">
+        <div class="hero__text">
+          <p class="hero__eyebrow">Soul-centered guidance</p>
+          <h1>Return to what<br>you <em>already know</em></h1>
+          <p class="hero__sub">Channeling sessions, doula support, and guided meditations — rooted in the quiet wisdom that lives within you.</p>
+          <div class="hero__actions">
+            <button class="btn btn--filled" onclick="navigateTo('book')">Book a Session</button>
+            <button class="btn btn--ghost" onclick="navigateTo('offerings')">Explore Offerings</button>
+          </div>
+        </div>
+        <div class="hero__image img-placeholder" data-description="Portrait of Chandra — soft natural light, earth tones, contemplative"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="intro">
+    <div class="container container--narrow">
+      <div class="divider divider--center"></div>
+      <div class="reveal">
+        <p>There is a place in you that has never been lost — only quiet. A place that remembers your wholeness, holds your truth, and <em>knows the way home.</em></p>
+      </div>
+      <div class="divider divider--center" style="margin-top: var(--space-lg);"></div>
+    </div>
+  </section>
+
+  <!-- Offerings Preview -->
+  <section class="offerings-preview">
+    <div class="container">
+      <div class="offerings-preview__header reveal">
+        <p class="uppercase">Offerings</p>
+        <h2>Ways to work together</h2>
+      </div>
+      <div class="offerings-grid">
+        <div class="offering-card reveal reveal-delay-1">
+          <div class="offering-card__number">01</div>
+          <h3>Channeling Sessions</h3>
+          <p>A personal, one-on-one session to reconnect with your soul's guidance — finding clarity, alignment, and a deeper trust in your own knowing.</p>
+          <button class="btn btn--ghost" onclick="navigateTo('book')">Book Now</button>
+        </div>
+        <div class="offering-card reveal reveal-delay-2">
+          <div class="offering-card__number">02</div>
+          <h3>Doula Support</h3>
+          <p>Birth support woven with spiritual depth — honoring your body's wisdom, your intuition, and the sacred intelligence of this passage.</p>
+          <span class="tag">Accepting inquiries</span><br>
+          <button class="btn btn--ghost" onclick="navigateTo('contact')">Inquire</button>
+        </div>
+        <div class="offering-card reveal reveal-delay-3">
+          <div class="offering-card__number">03</div>
+          <h3>Meditation Bundles</h3>
+          <p>Guided meditations designed to bring you back into relationship with your higher self, your body, and the still voice within.</p>
+          <span class="tag">Coming soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transformation -->
+  <section class="transformation">
+    <div class="container container--wide">
+      <div class="transformation__inner">
+        <div class="transformation__image img-placeholder reveal" data-description="Atmospheric — golden light through trees, or soft desert landscape"></div>
+        <div class="transformation__text reveal">
+          <p class="uppercase" style="color: var(--terracotta);">What this work opens</p>
+          <h2>A return to yourself</h2>
+          <div class="divider"></div>
+          <ul class="transformation__list">
+            <li>
+              <span>Reconnection</span>
+              Hear the voice of your soul again
+            </li>
+            <li>
+              <span>Clarity</span>
+              See your path with honest, gentle eyes
+            </li>
+            <li>
+              <span>Trust</span>
+              Settle into the knowing your body already carries
+            </li>
+            <li>
+              <span>Alignment</span>
+              Feel the relief of living from your truth
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="about-preview">
+    <div class="container container--narrow">
+      <div class="reveal">
+        <div class="about-preview__image img-placeholder" data-description="Chandra — warm, personal, close portrait"></div>
+      </div>
+      <div class="reveal">
+        <p class="uppercase" style="color: var(--terracotta);">About</p>
+        <h2>Hi, I'm Chandra</h2>
+        <p>My path to this work was not gentle — it moved through loss, through silence, through the slow and difficult process of remembering who I was beneath everything I'd been told to be. That journey became the foundation for everything I offer now.</p>
+        <br>
+        <button class="btn btn--ghost" onclick="navigateTo('about')">Read my story</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials__header reveal">
+        <p class="uppercase">Words from clients</p>
+      </div>
+      <div class="testimonials__grid">
+        <div class="testimonial reveal reveal-delay-1">
+          <p class="testimonial__quote">I came in feeling scattered and disconnected. Within minutes, I felt like I was being seen in a way I hadn't experienced before — not just heard, but truly witnessed at a soul level.</p>
+          <p class="testimonial__author">— Client testimonial</p>
+        </div>
+        <div class="testimonial reveal reveal-delay-2">
+          <p class="testimonial__quote">The session gave me permission to trust myself again. I left with a kind of clarity I hadn't felt in years — like something that was always there finally had room to speak.</p>
+          <p class="testimonial__author">— Client testimonial</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="closing-cta">
+    <div class="container container--narrow">
+      <div class="reveal">
+        <p class="uppercase" style="color: var(--terracotta);">Begin</p>
+        <h2>You don't need to have it all figured out</h2>
+        <p>Just a willingness to listen — to yourself, again.</p>
+        <div class="closing-cta__actions">
+          <button class="btn btn--filled" onclick="navigateTo('book')">Book a Session</button>
+          <button class="btn btn--ghost" onclick="navigateTo('contact')">Reach Out</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ============================================
+     ABOUT PAGE
+     ============================================ -->
+<div class="page" id="page-about">
+
+  <div class="page-header">
+    <div class="container container--narrow">
+      <span class="uppercase">About</span>
+      <h1>Chandra</h1>
+    </div>
+  </div>
+
+  <section class="about-portrait">
+    <div class="container">
+      <div class="about-portrait__inner">
+        <div class="about-portrait__image img-placeholder reveal" data-description="Chandra — full portrait, natural setting, warm golden light"></div>
+        <div class="reveal">
+          <p>I'm a channeler, emerging doula, and guide for people who are ready to come home to themselves — to the wisdom they've always carried but may have forgotten how to hear.</p>
+          <br>
+          <p>My work exists at the intersection of the spiritual and the deeply human. It is gentle and honest. It asks nothing of you except your willingness to listen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="container">
+      <div class="story-section__inner reveal">
+        <span class="uppercase">Before</span>
+        <h2>The life that looked right</h2>
+        <div class="divider"></div>
+        <p>For a long time, I lived inside a version of myself that other people understood. It was safe and orderly and completely disconnected from anything real. I didn't know I was lost. I only knew something felt quiet in a way that didn't feel like peace — it felt like absence.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="container">
+      <div class="story-section__inner reveal">
+        <span class="uppercase">Awakening</span>
+        <h2>When everything changed</h2>
+        <div class="divider"></div>
+        <p>The shift didn't come gently. It came through rupture — through grief and disorientation and the slow collapse of everything I thought I knew. And inside that collapse, something else began to speak. Something older than the life I'd been living. Something that had been waiting.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="container">
+      <div class="story-section__inner reveal">
+        <span class="uppercase">Healing</span>
+        <h2>The long way back</h2>
+        <div class="divider"></div>
+        <p>What followed were years of deep work — shadow work, somatic healing, spiritual unfolding. I traveled to Egypt. I sat in silence. I learned to listen to my body, my dreams, and the quiet voice that had been there all along. I didn't find answers. I found something better: I found trust.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="container">
+      <div class="story-section__inner reveal">
+        <span class="uppercase">Now</span>
+        <h2>What I offer from here</h2>
+        <div class="divider"></div>
+        <p>Everything I do now grows from that journey. When I sit with a client, I am not performing guidance — I am holding space for the same remembering that changed my life. I channel because it is the truest form of service I know. I support mothers because birth is one of the most sacred thresholds we cross. And I create meditations because stillness was the doorway for me.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy">
+    <div class="container container--narrow">
+      <div class="reveal">
+        <p class="uppercase" style="color: var(--terracotta);">Philosophy</p>
+        <h2>What I believe</h2>
+      </div>
+      <div class="philosophy__tenets">
+        <div class="philosophy__tenet reveal reveal-delay-1">
+          <p>The body carries wisdom the mind hasn't caught up to yet.</p>
+        </div>
+        <div class="philosophy__tenet reveal reveal-delay-2">
+          <p>The soul knows — even when we've forgotten how to listen.</p>
+        </div>
+        <div class="philosophy__tenet reveal reveal-delay-3">
+          <p>Healing is not becoming someone new. It is remembering who you were before the world told you otherwise.</p>
+        </div>
+        <div class="philosophy__tenet reveal reveal-delay-4">
+          <p>Alignment doesn't come from outside. It comes from finally trusting what's within.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing-cta">
+    <div class="container container--narrow">
+      <div class="reveal">
+        <h2>I'd love to sit with you</h2>
+        <p>Whether you're seeking clarity, navigating a threshold, or simply ready to reconnect — I'm here.</p>
+        <div class="closing-cta__actions">
+          <button class="btn btn--filled" onclick="navigateTo('book')">Book a Session</button>
+          <button class="btn btn--ghost" onclick="navigateTo('contact')">Get in Touch</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ============================================
+     OFFERINGS PAGE
+     ============================================ -->
+<div class="page" id="page-offerings">
+
+  <div class="page-header">
+    <div class="container container--narrow">
+      <span class="uppercase">Offerings</span>
+      <h1>Ways to work together</h1>
+      <br>
+      <p style="margin: 0 auto; color: var(--brown-warm); font-family: var(--font-serif); font-size: 1.15rem; font-style: italic;">Every offering is rooted in the same intention — to help you return to the wisdom, trust, and truth that already live within you.</p>
+    </div>
+  </div>
+
+  <!-- Channeling Sessions -->
+  <section class="offering-detail">
+    <div class="container container--wide">
+      <div class="offering-detail__inner">
+        <div class="offering-detail__image img-placeholder reveal" data-description="Warm, intimate — candles, soft fabric, golden light"></div>
+        <div class="reveal">
+          <div class="offering-detail__number">01</div>
+          <div class="offering-detail__eyebrow">Primary Offering</div>
+          <h2>1:1 Channeling Sessions</h2>
+          <div class="divider"></div>
+          <p>A channeling session is a direct, personal conversation with the deeper layers of your own soul's knowing. I serve as a conduit — creating a safe and sacred container for the messages, clarity, and guidance that want to come through for you.</p>
+          <p>This is not about prediction. It's about reconnection. You may come with a question, a feeling, or simply a readiness to listen. What you receive is whatever your soul most needs you to hear.</p>
+          <ul>
+            <li>Clarity on your path, purpose, or next steps</li>
+            <li>Deeper connection to your own intuition</li>
+            <li>Release of what no longer serves you</li>
+            <li>A feeling of being truly seen and met</li>
+            <li>Trust — in yourself, your timing, and your journey</li>
+          </ul>
+          <p><strong>Format:</strong> 60 minutes via Zoom</p>
+          <br>
+          <button class="btn btn--filled" onclick="navigateTo('book')">Book a Session</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doula Support -->
+  <section class="offering-detail">
+    <div class="container container--wide">
+      <div class="offering-detail__inner reverse">
+        <div class="offering-detail__image img-placeholder reveal" data-description="Soft, maternal — hands cradling, nature, morning light"></div>
+        <div class="reveal">
+          <div class="offering-detail__number">02</div>
+          <div class="offering-detail__eyebrow">Emerging Offering</div>
+          <h2>Doula Support</h2>
+          <div class="divider"></div>
+          <p>Birth is one of the most powerful thresholds a woman will ever cross — and yet so many of us approach it disconnected from the deep intelligence our bodies carry.</p>
+          <p>My approach to doula work weaves spiritual depth into practical birth support. I believe in honoring the mother's intuition, the wisdom of her body, and the sacred presence of the soul entering this world.</p>
+          <p>This offering is currently limited as I continue deepening my training and experience. If this resonates with you, I would love to hear from you.</p>
+          <br>
+          <span class="tag">Accepting inquiries</span>
+          <br><br>
+          <button class="btn" onclick="navigateTo('contact')">Inquire About Doula Support</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meditation Bundles -->
+  <section class="offering-detail">
+    <div class="container container--wide">
+      <div class="offering-detail__inner">
+        <div class="offering-detail__image img-placeholder reveal" data-description="Serene — still water, soft dawn, mist, quiet landscape"></div>
+        <div class="reveal">
+          <div class="offering-detail__number">03</div>
+          <div class="offering-detail__eyebrow">Coming Soon</div>
+          <h2>Meditation Bundles</h2>
+          <div class="divider"></div>
+          <p>Guided meditations for reconnecting with your higher self, settling into your body, and finding stillness in the middle of everything.</p>
+          <p>These recordings are being crafted with care and will be available soon. Each meditation is designed to be a doorway — not a performance, but a practice of return.</p>
+          <br>
+          <span class="tag">Coming soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing-cta">
+    <div class="container container--narrow">
+      <div class="reveal">
+        <h2>Not sure where to begin?</h2>
+        <p>A channeling session is the simplest way to start. No preparation needed — just an open heart.</p>
+        <div class="closing-cta__actions">
+          <button class="btn btn--filled" onclick="navigateTo('book')">Book a Session</button>
+          <button class="btn btn--ghost" onclick="navigateTo('contact')">Ask a Question</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ============================================
+     BOOK PAGE
+     ============================================ -->
+<div class="page" id="page-book">
+
+  <div class="page-header">
+    <div class="container container--narrow">
+      <span class="uppercase">Book</span>
+      <h1>Schedule a Session</h1>
+      <br>
+      <p style="margin: 0 auto; color: var(--brown-warm); font-family: var(--font-serif); font-size: 1.15rem; font-style: italic;">No preparation is needed. Just bring yourself — wherever you are, however you are.</p>
+    </div>
+  </div>
+
+  <section class="book-details">
+    <div class="container">
+      <div class="book-details__inner">
+        <div class="reveal">
+          <div class="book-info">
+            <h2>1:1 Channeling Session</h2>
+            <div class="divider"></div>
+            <p>A sacred, one-on-one session held over Zoom. I will channel guidance, messages, and clarity from the deeper layers of your soul's wisdom. You're welcome to come with specific questions or simply with an openness to receive.</p>
+
+            <div class="session-meta">
+              <div class="session-meta__item">
+                <span class="session-meta__label">Duration</span>
+                <span class="session-meta__value">60 minutes</span>
+              </div>
+              <div class="session-meta__item">
+                <span class="session-meta__label">Format</span>
+                <span class="session-meta__value">Zoom (link provided after booking)</span>
+              </div>
+              <div class="session-meta__item">
+                <span class="session-meta__label">Investment</span>
+                <span class="session-meta__value">$— (to be confirmed)</span>
+              </div>
+              <div class="session-meta__item">
+                <span class="session-meta__label">Deposit</span>
+                <span class="session-meta__value">$— to secure your spot</span>
+              </div>
+            </div>
+
+            <p style="font-size: 0.88rem; color: var(--brown-mid);">After booking, you'll receive a confirmation email with your Zoom link and any optional preparation suggestions.</p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <div class="calendar-placeholder">
+            <div>
+              <p>Calendar booking will appear here</p>
+              <br>
+              <p style="font-size: 0.85rem; font-style: normal; color: var(--sand);">Calendly, Cal.com, or Acuity embed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="policies">
+    <div class="container container--narrow">
+      <div class="reveal">
+        <h3>A few things to know</h3>
+        <div class="divider divider--center"></div>
+        <p><strong>Rescheduling:</strong> Life happens. If you need to reschedule, please do so at least 24 hours in advance. You can reschedule through the link in your confirmation email.</p>
+        <p><strong>Cancellation:</strong> Cancellations made more than 24 hours before your session are eligible for a full refund of any deposit. Cancellations within 24 hours are non-refundable, but you're welcome to reschedule.</p>
+        <p><strong>Late arrivals:</strong> Your session will begin at the scheduled time. If you arrive late, we'll use the remaining time together — no extensions, but no judgment either.</p>
+        <p><strong>Recording:</strong> Sessions are not recorded by default. If you'd like to record, just let me know beforehand.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ============================================
+     CONTACT PAGE
+     ============================================ -->
+<div class="page" id="page-contact">
+
+  <div class="page-header">
+    <div class="container container--narrow">
+      <span class="uppercase">Contact</span>
+      <h1>Let's connect</h1>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="reveal">
+          <div class="contact__info">
+            <h2>I'd love to hear from you</h2>
+            <div class="divider"></div>
+            <p>Whether you have a question about sessions, want to explore doula support, or simply feel called to connect — this is the place. No pressure, no formality. Just reach out.</p>
+
+            <ul class="contact__links">
+              <li><a href="mailto:hello@chandra.com">hello@chandra.com</a></li>
+              <li><a href="#" target="_blank" rel="noopener">Instagram →</a></li>
+              <li><a href="#" target="_blank" rel="noopener">Substack →</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">What brings you here?</label>
+              <select id="subject" name="subject">
+                <option value="" disabled selected>Select one</option>
+                <option value="session">Channeling session question</option>
+                <option value="doula">Doula support inquiry</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="general">General question</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--filled" style="align-self: flex-start;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ============================================
+     FOOTER (shared)
+     ============================================ -->
+<footer class="footer" id="footer">
+  <div class="container container--wide">
+    <div class="footer__inner">
+      <div>
+        <p class="footer__brand">Chandra</p>
+        <p class="footer__tagline">Soul-centered guidance</p>
+      </div>
+      <ul class="footer__nav">
+        <li><button data-page="home">Home</button></li>
+        <li><button data-page="about">About</button></li>
+        <li><button data-page="offerings">Offerings</button></li>
+        <li><button data-page="book">Book</button></li>
+        <li><button data-page="contact">Contact</button></li>
+      </ul>
+      <div class="footer__social">
+        <ul class="footer__social-links">
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Substack</a></li>
+          <li><a href="mailto:hello@chandra.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Chandra. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================
+     JAVASCRIPT
+     ============================================ -->
+<script>
+(function() {
+  // ---- Page Navigation ----
+  const pages = document.querySelectorAll('.page');
+  const navLinks = document.querySelectorAll('[data-page]');
+  let currentPage = 'home';
+
+  function navigateTo(pageName) {
+    if (pageName === currentPage) return;
+
+    // Close mobile menu
+    closeMobileMenu();
+
+    // Fade out current
+    const current = document.getElementById('page-' + currentPage);
+    current.classList.remove('visible');
+
+    setTimeout(() => {
+      current.classList.remove('active');
+
+      // Activate new
+      const next = document.getElementById('page-' + pageName);
+      next.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+
+      // Reset reveal elements
+      next.querySelectorAll('.reveal').forEach(el => el.classList.remove('in-view'));
+
+      requestAnimationFrame(() => {
+        next.classList.add('visible');
+        currentPage = pageName;
+
+        // Update nav
+        document.querySelectorAll('.nav__link').forEach(l => l.classList.remove('active'));
+        document.querySelectorAll('.nav__link[data-page="' + pageName + '"]').forEach(l => l.classList.add('active'));
+
+        // Trigger reveals
+        setTimeout(() => observeReveals(), 100);
+
+        // Update URL hash
+        history.pushState(null, '', '#' + pageName);
+      });
+    }, 400);
+  }
+
+  // Expose globally
+  window.navigateTo = navigateTo;
+
+  // Bind nav clicks
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navigateTo(link.dataset.page);
+    });
+  });
+
+  // Initial page
+  const hash = window.location.hash.replace('#', '');
+  if (hash && document.getElementById('page-' + hash)) {
+    const home = document.getElementById('page-home');
+    home.classList.remove('active');
+    const target = document.getElementById('page-' + hash);
+    target.classList.add('active');
+    currentPage = hash;
+    document.querySelectorAll('.nav__link').forEach(l => l.classList.remove('active'));
+    document.querySelectorAll('.nav__link[data-page="' + hash + '"]').forEach(l => l.classList.add('active'));
+  }
+
+  // Make initial page visible
+  requestAnimationFrame(() => {
+    document.getElementById('page-' + currentPage).classList.add('visible');
+  });
+
+  // Handle back/forward
+  window.addEventListener('popstate', () => {
+    const h = window.location.hash.replace('#', '') || 'home';
+    if (h !== currentPage && document.getElementById('page-' + h)) {
+      navigateTo(h);
+    }
+  });
+
+
+  // ---- Mobile Menu ----
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('visible');
+    document.body.style.overflow = mobileMenu.classList.contains('visible') ? 'hidden' : '';
+  });
+
+  function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('visible');
+    document.body.style.overflow = '';
+  }
+
+
+  // ---- Scroll Effects ----
+  const nav = document.getElementById('nav');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+
+  // ---- Intersection Observer for Reveals ----
+  let observer;
+
+  function observeReveals() {
+    if (observer) observer.disconnect();
+
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.page.active .reveal:not(.in-view)').forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  observeReveals();
+
+
+  // ---- Form Handler ----
+  window.handleSubmit = function(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const original = btn.textContent;
+    btn.textContent = 'Sent — thank you';
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      e.target.reset();
+    }, 3000);
+  };
+
+})();
+</script>
+
+</body>
+</html>
