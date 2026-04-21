@@ -92,14 +92,14 @@ h1, h2, h3, h4 {
   color: var(--color-terracotta-deep);
 }
 
-/* Small-caps running head — for editorial marginalia */
+/* Small-caps running head — for editorial marginalia.
+   Colour intentionally omitted so Tailwind text-* classes can control it. */
 .u-running-head {
   font-family: var(--font-sans);
   font-size: 0.62rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   font-weight: 400;
-  color: var(--color-brown-mid);
 }
 
 /* Vertical text (for side-running mastheads) */
