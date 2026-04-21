@@ -16,6 +16,9 @@ const offerings = [
     href: "/offerings",
     status: null as string | null,
     statusTone: null as "terracotta" | "sage" | null,
+    image: "/images/earth-lichen-texture.jpg",
+    imageAlt: "Earthy lichen texture — the Mother's frequency",
+    imagePosition: "50% 45%",
   },
   {
     number: "ii",
@@ -25,6 +28,9 @@ const offerings = [
     href: "/doula",
     status: "Accepting inquiries",
     statusTone: "terracotta" as const,
+    image: "/images/chandra-holding-newborn.jpg",
+    imageAlt: "Chandra holding a newborn in soft light",
+    imagePosition: "50% 30%",
   },
   {
     number: "iii",
@@ -34,6 +40,9 @@ const offerings = [
     href: null as string | null,
     status: "Coming soon",
     statusTone: "sage" as const,
+    image: "/images/golden-sunset-clouds.jpg",
+    imageAlt: "Golden sunset light through layered clouds",
+    imagePosition: "50% 55%",
   },
 ];
 
@@ -124,20 +133,25 @@ export default function Home() {
           {/* Portrait — col-span-5, clean margin from headline on desktop */}
           <div className="relative col-span-12 md:col-span-4 md:col-start-9 lg:col-span-5 lg:col-start-8">
             <Reveal variant="soft" delay={250}>
-              <div className="relative">
+              <div className="group/hero relative">
                 {/* Slow-rotating sun sigil behind the image as a halo */}
                 <div
-                  className="pointer-events-none absolute -right-8 -top-8 hidden text-gold/35 lg:block"
+                  className="pointer-events-none absolute -right-8 -top-8 z-10 hidden text-gold/35 lg:block"
                   aria-hidden="true"
                 >
                   <div className="animate-slow-rotate">
                     <Sigil size={140} variant="sun" />
                   </div>
                 </div>
+                {/* Offset shadow-card */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 translate-x-3 translate-y-3 bg-brown-deep/15"
+                />
 
                 <Parallax speed={0.06}>
                   <div
-                    className="img-ember-bleed img-vignette relative overflow-hidden bg-cream-dark"
+                    className="img-ember-bleed img-vignette relative overflow-hidden bg-cream-dark ring-1 ring-gold/30"
                     style={{ aspectRatio: "4/5" }}
                   >
                     <Image
@@ -148,13 +162,13 @@ export default function Home() {
                       sizes="(min-width: 1024px) 40vw, (min-width: 768px) 35vw, 100vw"
                       className="object-cover"
                     />
+                    {/* Caption on photo */}
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brown-ink/55 via-brown-ink/10 to-transparent" />
+                    <p className="pointer-events-none absolute bottom-3 left-4 font-serif text-sm italic text-cream/95">
+                      Golden hour, held in her own light.
+                    </p>
                   </div>
                 </Parallax>
-
-                {/* Photo caption, editorial style */}
-                <p className="mt-4 pl-2 font-serif text-sm italic text-brown-mid">
-                  Golden hour, held in her own light.
-                </p>
               </div>
             </Reveal>
           </div>
@@ -200,86 +214,77 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <div className="mt-24 space-y-20 md:space-y-28">
-            {offerings.map((item, i) => {
-              const isEven = i % 2 === 1;
-              return (
-                <div key={item.title}>
-                  <Reveal variant="rise">
-                    <article
-                      className={`grid grid-cols-12 items-baseline gap-y-6 md:gap-x-10 ${
-                        isEven ? "md:text-right" : ""
-                      }`}
+          {/* Triptych — three columns, each a photo + editorial entry */}
+          <div className="mt-20 grid gap-y-16 md:grid-cols-3 md:gap-x-10 md:gap-y-0">
+            {offerings.map((item, i) => (
+              <Reveal key={item.title} variant="soft" delay={i * 120}>
+                <article
+                  className={`group/card flex h-full flex-col ${
+                    i > 0 ? "md:border-l md:border-cream-dark/60 md:pl-10" : ""
+                  }`}
+                >
+                  {/* Photo — shared aspect, consistent mat */}
+                  <div className="relative">
+                    {/* Offset shadow-card behind the image */}
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0 translate-x-2 translate-y-2 bg-brown-deep/10 transition-transform duration-700 ease-out group-hover/card:translate-x-1 group-hover/card:translate-y-1"
+                    />
+                    <div
+                      className="relative overflow-hidden bg-cream-dark ring-1 ring-gold/25"
+                      style={{ aspectRatio: "4/5" }}
                     >
-                      {/* Numeral */}
-                      <div
-                        className={`col-span-12 md:col-span-2 ${
-                          isEven ? "md:order-2" : ""
-                        }`}
-                      >
-                        <span className="block font-serif text-7xl italic font-light text-gold md:text-8xl lg:text-[7rem]">
-                          {item.number}
+                      <Image
+                        src={item.image}
+                        alt={item.imageAlt}
+                        fill
+                        sizes="(min-width: 1024px) 28vw, (min-width: 768px) 32vw, 100vw"
+                        className="object-cover transition-transform duration-[1400ms] ease-out group-hover/card:scale-[1.02]"
+                        style={{ objectPosition: item.imagePosition }}
+                      />
+                      {/* Numeral overlay, bottom-left, on a soft gradient */}
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brown-ink/55 via-brown-ink/15 to-transparent" />
+                      <span className="pointer-events-none absolute bottom-3 left-4 font-serif text-4xl italic text-cream/95 md:text-5xl">
+                        {item.number}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Text */}
+                  <div className="mt-7 flex flex-1 flex-col">
+                    <h3 className="font-serif text-3xl font-light leading-[1.1] text-brown-deep md:text-[2rem]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 font-serif text-base italic leading-snug text-terracotta-deep md:text-lg">
+                      {item.subtitle}
+                    </p>
+                    <p className="mt-4 text-[0.95rem] leading-[1.65] text-brown-warm">
+                      {item.body}
+                    </p>
+
+                    <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-6">
+                      {item.href ? (
+                        <Button href={item.href} variant="ghost">
+                          Learn more
+                        </Button>
+                      ) : null}
+                      {item.status ? (
+                        <span
+                          className={`inline-flex items-center gap-2 text-[0.66rem] uppercase tracking-[0.2em] ${
+                            item.statusTone === "sage"
+                              ? "text-sage"
+                              : "text-terracotta"
+                          }`}
+                        >
+                          <span className="block h-1 w-1 rounded-full bg-current" />
+                          {item.status}
                         </span>
-                      </div>
-
-                      {/* Content */}
-                      <div
-                        className={`col-span-12 md:col-span-10 ${
-                          isEven ? "md:order-1" : ""
-                        }`}
-                      >
-                        <h3 className="font-serif text-4xl font-light leading-[1.1] text-brown-deep md:text-5xl">
-                          {item.title}
-                        </h3>
-                        <p
-                          className={`mt-3 font-serif text-lg italic text-terracotta-deep md:text-xl ${
-                            isEven ? "md:text-right" : ""
-                          }`}
-                        >
-                          {item.subtitle}
-                        </p>
-                        <p className="mt-5 max-w-xl text-base leading-relaxed text-brown-warm md:text-[1.05rem]">
-                          {item.body}
-                        </p>
-
-                        <div
-                          className={`mt-7 flex flex-wrap items-center gap-5 ${
-                            isEven ? "md:justify-end" : ""
-                          }`}
-                        >
-                          {item.href ? (
-                            <Button href={item.href} variant="ghost">
-                              Learn more
-                            </Button>
-                          ) : null}
-                          {item.status ? (
-                            <span
-                              className={`inline-flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.18em] ${
-                                item.statusTone === "sage"
-                                  ? "text-sage"
-                                  : "text-terracotta"
-                              }`}
-                            >
-                              <span className="block h-1 w-1 rounded-full bg-current" />
-                              {item.status}
-                            </span>
-                          ) : null}
-                        </div>
-                      </div>
-                    </article>
-                  </Reveal>
-
-                  {/* Sigil divider — not after the last entry */}
-                  {i < offerings.length - 1 ? (
-                    <Reveal variant="soft">
-                      <div className="mt-20 flex justify-center text-gold/70 md:mt-28">
-                        <Sigil size={22} />
-                      </div>
-                    </Reveal>
-                  ) : null}
-                </div>
-              );
-            })}
+                      ) : null}
+                    </div>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -293,23 +298,30 @@ export default function Home() {
           <div className="col-span-12 md:col-span-6 lg:col-span-5">
             <Reveal variant="soft">
               <div className="sticky top-32">
-                <Parallax speed={0.12}>
+                <div className="relative">
                   <div
-                    className="img-ember-bleed relative overflow-hidden"
-                    style={{ aspectRatio: "4/5" }}
-                  >
-                    <Image
-                      src="/images/red-rocks-golden-hour.jpg"
-                      alt="Red rock landscape bathed in golden-hour light"
-                      fill
-                      sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                </Parallax>
-                <p className="mt-4 pl-1 font-serif text-sm italic text-brown-mid">
-                  Utah, at the edge of light.
-                </p>
+                    aria-hidden="true"
+                    className="absolute inset-0 translate-x-3 translate-y-3 bg-terracotta-deep/18"
+                  />
+                  <Parallax speed={0.12}>
+                    <div
+                      className="img-ember-bleed relative overflow-hidden ring-1 ring-gold/25"
+                      style={{ aspectRatio: "4/5" }}
+                    >
+                      <Image
+                        src="/images/red-rocks-golden-hour.jpg"
+                        alt="Red rock landscape bathed in golden-hour light"
+                        fill
+                        sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brown-ink/55 via-brown-ink/10 to-transparent" />
+                      <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
+                        Utah, at the edge of light.
+                      </p>
+                    </div>
+                  </Parallax>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -374,17 +386,23 @@ export default function Home() {
           </div>
           <div className="order-1 col-span-12 md:order-2 md:col-span-5">
             <Reveal variant="soft" delay={150}>
-              <div
-                className="img-vignette relative overflow-hidden"
-                style={{ aspectRatio: "4/5" }}
-              >
-                <Image
-                  src="/images/chandra-portrait-smiling.jpg"
-                  alt="Chandra smiling — a warm portrait"
-                  fill
-                  sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
+              <div className="group/portrait relative">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 translate-x-3 translate-y-3 bg-brown-deep/15 transition-transform duration-700 ease-out group-hover/portrait:translate-x-2 group-hover/portrait:translate-y-2"
                 />
+                <div
+                  className="img-vignette relative overflow-hidden bg-cream-dark ring-1 ring-gold/30"
+                  style={{ aspectRatio: "4/5" }}
+                >
+                  <Image
+                    src="/images/chandra-portrait-smiling.jpg"
+                    alt="Chandra smiling — a warm portrait"
+                    fill
+                    sizes="(min-width: 768px) 40vw, 100vw"
+                    className="object-cover transition-transform duration-[1400ms] ease-out group-hover/portrait:scale-[1.02]"
+                  />
+                </div>
               </div>
             </Reveal>
           </div>

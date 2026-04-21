@@ -39,6 +39,11 @@ yarn-error.log*
 # raw source photos (kept locally / in Dropbox, not tracked in Git)
 /assets/
 
+# playwright / browser-testing artifacts
+/.playwright-mcp/
+/*.png
+/*.jpeg
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

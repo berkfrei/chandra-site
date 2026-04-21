@@ -86,23 +86,30 @@ export default function DoulaPage() {
           <div className="col-span-12 md:col-span-5">
             <Reveal variant="soft">
               <div className="md:sticky md:top-32">
-                <Parallax speed={0.08}>
+                <div className="relative">
                   <div
-                    className="img-vignette img-ember-bleed relative overflow-hidden"
-                    style={{ aspectRatio: "3/4" }}
-                  >
-                    <Image
-                      src="/images/chandra-holding-newborn.jpg"
-                      alt="Chandra holding a newborn baby in soft light"
-                      fill
-                      sizes="(min-width: 768px) 40vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                </Parallax>
-                <p className="mt-4 pl-1 font-serif text-sm italic text-brown-mid">
-                  First arrivals, held.
-                </p>
+                    aria-hidden="true"
+                    className="absolute inset-0 translate-x-3 translate-y-3 bg-brown-deep/15"
+                  />
+                  <Parallax speed={0.06}>
+                    <div
+                      className="img-vignette img-ember-bleed relative overflow-hidden ring-1 ring-gold/30"
+                      style={{ aspectRatio: "3/4" }}
+                    >
+                      <Image
+                        src="/images/chandra-holding-newborn.jpg"
+                        alt="Chandra holding a newborn baby in soft light"
+                        fill
+                        sizes="(min-width: 768px) 40vw, 100vw"
+                        className="object-cover"
+                      />
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brown-ink/55 via-brown-ink/10 to-transparent" />
+                      <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
+                        First arrivals, held.
+                      </p>
+                    </div>
+                  </Parallax>
+                </div>
               </div>
             </Reveal>
           </div>

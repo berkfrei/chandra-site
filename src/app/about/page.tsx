@@ -52,29 +52,39 @@ export default function AboutPage() {
       </section>
 
       {/* ============================================
-          PORTRAIT + INTRO — asymmetric, image bleeds
+          PORTRAIT + INTRO — asymmetric, framed portrait of Chandra
           ============================================ */}
       <section className="relative overflow-hidden px-6 pb-32 lg:px-10 lg:pb-40">
         <div className="mx-auto grid max-w-7xl grid-cols-12 items-end gap-y-12 md:gap-x-10">
           <div className="col-span-12 md:col-span-5">
             <Reveal variant="soft">
-              <Parallax speed={0.06}>
+              <div className="group/portrait relative">
+                {/* Offset shadow-card */}
                 <div
-                  className="img-vignette img-ember-bleed relative overflow-hidden"
-                  style={{ aspectRatio: "3/4" }}
-                >
-                  <Image
-                    src="/images/sunset-clouds-pink.jpg"
-                    alt="Soft pink and blue sunset clouds — ethereal sky"
-                    fill
-                    sizes="(min-width: 768px) 40vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-              </Parallax>
-              <p className="mt-4 pl-1 font-serif text-sm italic text-brown-mid">
-                The sky, after the storm.
-              </p>
+                  aria-hidden="true"
+                  className="absolute inset-0 translate-x-3 translate-y-3 bg-brown-deep/15 transition-transform duration-700 ease-out group-hover/portrait:translate-x-2 group-hover/portrait:translate-y-2"
+                />
+                <Parallax speed={0.05}>
+                  <div
+                    className="img-vignette relative overflow-hidden bg-cream-dark ring-1 ring-gold/30"
+                    style={{ aspectRatio: "4/5" }}
+                  >
+                    <Image
+                      src="/images/chandra-maternity-portrait.jpg"
+                      alt="Chandra in a maternity portrait — soft, grounded, held"
+                      fill
+                      sizes="(min-width: 768px) 42vw, 100vw"
+                      className="object-cover transition-transform duration-[1400ms] ease-out group-hover/portrait:scale-[1.02]"
+                      style={{ objectPosition: "50% 30%" }}
+                    />
+                    {/* Editorial caption over the photo */}
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brown-ink/60 via-brown-ink/15 to-transparent" />
+                    <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
+                      Mother, carrier, vessel.
+                    </p>
+                  </div>
+                </Parallax>
+              </div>
             </Reveal>
           </div>
 
@@ -149,20 +159,30 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-7xl">
           {/* Wide mood image leading into the chapter */}
           <Reveal variant="soft">
-            <Parallax speed={0.14}>
+            <div className="relative mx-auto" style={{ maxWidth: "60rem" }}>
               <div
-                className="img-vignette relative mx-auto overflow-hidden"
-                style={{ aspectRatio: "21/9", maxWidth: "60rem" }}
-              >
-                <Image
-                  src="/images/golden-sunset-clouds.jpg"
-                  alt="Golden sunset light over layered clouds — ethereal sky"
-                  fill
-                  sizes="(min-width: 1024px) 60vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </Parallax>
+                aria-hidden="true"
+                className="absolute inset-0 translate-x-3 translate-y-3 bg-brown-deep/12"
+              />
+              <Parallax speed={0.12}>
+                <div
+                  className="img-vignette relative overflow-hidden ring-1 ring-gold/25"
+                  style={{ aspectRatio: "21/9" }}
+                >
+                  <Image
+                    src="/images/golden-sunset-clouds.jpg"
+                    alt="Golden sunset light over layered clouds — ethereal sky"
+                    fill
+                    sizes="(min-width: 1024px) 60vw, 100vw"
+                    className="object-cover"
+                  />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brown-ink/45 to-transparent" />
+                  <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
+                    September, the sky opening.
+                  </p>
+                </div>
+              </Parallax>
+            </div>
           </Reveal>
 
           <div className="mx-auto mt-20 max-w-2xl">
@@ -207,64 +227,69 @@ export default function AboutPage() {
           <Reveal variant="soft">
             <div className="grid grid-cols-12 gap-y-10">
               <div className="col-span-12 md:col-span-5">
-                <Parallax speed={0.08}>
+                <div className="relative">
                   <div
-                    className="relative overflow-hidden"
-                    style={{ aspectRatio: "3/4" }}
-                  >
-                    <Image
-                      src="/images/red-rocks-golden-hour.jpg"
-                      alt="Red rock at the edge of dusk"
-                      fill
-                      sizes="(min-width: 768px) 40vw, 100vw"
-                      className="object-cover"
-                      style={{
-                        filter:
-                          "sepia(0.55) saturate(1.05) hue-rotate(-12deg) brightness(0.55) contrast(1.18)",
-                      }}
-                    />
-                    {/* Deep shadow overlay to push image into dusk */}
+                    aria-hidden="true"
+                    className="absolute inset-0 translate-x-3 translate-y-3 bg-ember/25"
+                  />
+                  <Parallax speed={0.08}>
                     <div
-                      className="absolute inset-0"
-                      style={{
-                        background:
-                          "linear-gradient(180deg, rgba(35,24,16,0.2) 0%, rgba(35,24,16,0.6) 100%)",
-                      }}
-                    />
-                  </div>
-                </Parallax>
-                <p className="mt-4 pl-1 font-serif text-sm italic text-gold-light/70">
-                  Into the dark, on the way to the light.
-                </p>
+                      className="relative overflow-hidden ring-1 ring-ember/30"
+                      style={{ aspectRatio: "3/4" }}
+                    >
+                      <Image
+                        src="/images/red-rocks-golden-hour.jpg"
+                        alt="Red rock at the edge of dusk"
+                        fill
+                        sizes="(min-width: 768px) 40vw, 100vw"
+                        className="object-cover"
+                        style={{
+                          filter:
+                            "sepia(0.55) saturate(1.05) hue-rotate(-12deg) brightness(0.55) contrast(1.18)",
+                        }}
+                      />
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          background:
+                            "linear-gradient(180deg, rgba(35,24,16,0.2) 0%, rgba(35,24,16,0.6) 100%)",
+                        }}
+                      />
+                      <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
+                        Into the dark, on the way to the light.
+                      </p>
+                    </div>
+                  </Parallax>
+                </div>
               </div>
 
               <div className="col-span-12 md:col-span-7 md:pl-10 lg:pl-16">
-                <div className="text-ember animate-ember-glow">
+                <div className="text-terracotta-light animate-ember-glow">
                   <Sigil size={26} variant="sun" />
                 </div>
-                <p className="mt-6 font-serif text-sm italic tracking-[0.3em] uppercase text-gold-light/70">
+                <p className="mt-6 font-serif text-sm italic tracking-[0.3em] uppercase text-gold-light">
                   Chapter III &nbsp;·&nbsp; The Underworld
                 </p>
                 <h2 className="text-display mt-6 text-5xl text-cream md:text-6xl lg:text-7xl">
                   Into the
                   <br />
-                  <em className="text-ember">shadow.</em>
+                  <em className="text-terracotta-light">shadow.</em>
                 </h2>
 
-                <div className="mt-10 flex items-center gap-4 text-gold/60">
-                  <span className="block h-px w-16 bg-current opacity-60" />
+                <div className="mt-10 flex items-center gap-4 text-gold-light/70">
+                  <span className="block h-px w-16 bg-current opacity-70" />
                   <Sigil size={14} />
-                  <span className="block h-px w-16 bg-current opacity-60" />
+                  <span className="block h-px w-16 bg-current opacity-70" />
                 </div>
 
-                <p className="mt-10 font-serif text-lg leading-[1.7] text-cream/90 md:text-xl">
+                <p className="mt-10 font-serif text-lg leading-[1.7] text-cream md:text-xl">
                   What followed was my real initiation — a full reclamation of
                   my soul and sovereignty. My ego shattered. My nervous system
                   recalibrated. I had to anchor a profound, unshakable trust
                   into every moment, because I was terrified of letting go,
                   and every belief rooted in fear had to go.
                 </p>
-                <p className="mt-6 font-serif text-lg leading-[1.7] text-cream/85 md:text-xl">
+                <p className="mt-6 font-serif text-lg leading-[1.7] text-cream/95 md:text-xl">
                   Slowly I loosened my grip. And through that letting go, I
                   reclaimed every part of myself that had been hidden — the
                   parts deemed unworthy, unlovable, shameful. Because
@@ -272,12 +297,12 @@ export default function AboutPage() {
                   and pain and grief, was my soul. My true essence. My
                   wholeness.
                 </p>
-                <p className="mt-6 font-serif text-lg leading-[1.7] text-cream/80 md:text-xl">
+                <p className="mt-6 font-serif text-lg leading-[1.7] text-cream/95 md:text-xl">
                   I spent the last year and a half deep in this underworld,
                   gathering every part of my fragmented heart, moving through
                   mountains of grief. Every ego death opened a deeper trust.
                 </p>
-                <p className="mt-8 font-serif text-2xl italic leading-snug text-ember md:text-3xl">
+                <p className="mt-10 font-serif text-2xl italic leading-snug text-terracotta-light md:text-3xl">
                   It was the hardest year and a half of my life — and the most
                   extraordinary, mystical, magical.
                 </p>
@@ -303,20 +328,30 @@ export default function AboutPage() {
 
         <div className="relative mx-auto max-w-7xl">
           <Reveal variant="soft">
-            <Parallax speed={0.1}>
+            <div className="group/bloom relative mx-auto" style={{ maxWidth: "30rem" }}>
               <div
-                className="img-ember-bleed relative mx-auto overflow-hidden"
-                style={{ aspectRatio: "16/9", maxWidth: "52rem" }}
-              >
-                <Image
-                  src="/images/earth-lichen-texture.jpg"
-                  alt="Earth lichen texture — life on stone"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </Parallax>
+                aria-hidden="true"
+                className="absolute inset-0 translate-x-3 translate-y-3 bg-brown-deep/15"
+              />
+              <Parallax speed={0.06}>
+                <div
+                  className="img-ember-bleed img-vignette relative overflow-hidden ring-1 ring-gold/30"
+                  style={{ aspectRatio: "3/4" }}
+                >
+                  <Image
+                    src="/images/chandra-red-rocks-sunset.jpg"
+                    alt="Chandra's daughter walking into the red rocks at sunset"
+                    fill
+                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brown-ink/55 via-brown-ink/10 to-transparent" />
+                  <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
+                    Emerging into her own light.
+                  </p>
+                </div>
+              </Parallax>
+            </div>
           </Reveal>
 
           <div className="mx-auto mt-20 max-w-2xl">

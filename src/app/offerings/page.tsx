@@ -57,23 +57,30 @@ export default function OfferingsPage() {
           <div className="col-span-12 md:col-span-5">
             <Reveal variant="soft">
               <div className="md:sticky md:top-32">
-                <Parallax speed={0.1}>
+                <div className="relative">
                   <div
-                    className="img-vignette img-ember-bleed relative overflow-hidden"
-                    style={{ aspectRatio: "3/4" }}
-                  >
-                    <Image
-                      src="/images/earth-lichen-texture.jpg"
-                      alt="Earthy lichen texture on rock — amber, rust, and gold tones"
-                      fill
-                      sizes="(min-width: 768px) 40vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                </Parallax>
-                <p className="mt-4 pl-1 font-serif text-sm italic text-brown-mid">
-                  Lichen, where stone meets life.
-                </p>
+                    aria-hidden="true"
+                    className="absolute inset-0 translate-x-3 translate-y-3 bg-terracotta-deep/18"
+                  />
+                  <Parallax speed={0.08}>
+                    <div
+                      className="img-vignette img-ember-bleed relative overflow-hidden ring-1 ring-gold/25"
+                      style={{ aspectRatio: "3/4" }}
+                    >
+                      <Image
+                        src="/images/earth-lichen-texture.jpg"
+                        alt="Earthy lichen texture on rock — amber, rust, and gold tones"
+                        fill
+                        sizes="(min-width: 768px) 40vw, 100vw"
+                        className="object-cover"
+                      />
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brown-ink/55 via-brown-ink/10 to-transparent" />
+                      <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
+                        Lichen, where stone meets life.
+                      </p>
+                    </div>
+                  </Parallax>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -224,23 +231,30 @@ export default function OfferingsPage() {
           <div className="order-1 col-span-12 md:order-2 md:col-span-5">
             <Reveal variant="soft" delay={150}>
               <div className="md:sticky md:top-32">
-                <Parallax speed={0.1}>
+                <div className="relative">
                   <div
-                    className="img-vignette img-ember-bleed relative overflow-hidden"
-                    style={{ aspectRatio: "3/4" }}
-                  >
-                    <Image
-                      src="/images/golden-sunset-clouds.jpg"
-                      alt="Golden sunset light over layered clouds — ethereal sky"
-                      fill
-                      sizes="(min-width: 768px) 40vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                </Parallax>
-                <p className="mt-4 pl-1 font-serif text-sm italic text-brown-mid">
-                  Light through the veil.
-                </p>
+                    aria-hidden="true"
+                    className="absolute -inset-px translate-x-3 translate-y-3 bg-gold/25"
+                  />
+                  <Parallax speed={0.08}>
+                    <div
+                      className="img-vignette img-ember-bleed relative overflow-hidden ring-1 ring-gold/25"
+                      style={{ aspectRatio: "3/4" }}
+                    >
+                      <Image
+                        src="/images/golden-sunset-clouds.jpg"
+                        alt="Golden sunset light over layered clouds — ethereal sky"
+                        fill
+                        sizes="(min-width: 768px) 40vw, 100vw"
+                        className="object-cover"
+                      />
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brown-ink/55 via-brown-ink/10 to-transparent" />
+                      <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
+                        Light through the veil.
+                      </p>
+                    </div>
+                  </Parallax>
+                </div>
               </div>
             </Reveal>
           </div>
