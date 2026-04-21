@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Button from "@/components/ui/button";
 
 const links = [
@@ -13,16 +14,17 @@ const links = [
 ];
 
 export default function Nav() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -30,12 +32,15 @@ export default function Nav() {
     };
   }, [menuOpen]);
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname?.startsWith(href);
+
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-cream/90 backdrop-blur-md shadow-[0_1px_0_0_var(--color-cream-dark)]"
+            ? "bg-cream/92 backdrop-blur-md shadow-[0_1px_0_0_var(--color-cream-dark)]"
             : "bg-transparent"
         }`}
       >
@@ -43,23 +48,33 @@ export default function Nav() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-serif text-2xl tracking-wide text-brown-deep"
+            className="group/logo flex items-baseline gap-2 font-serif text-2xl tracking-wide text-brown-deep"
           >
-            Chandra
+            <span className="relative">
+              Chandra
+              <span className="pointer-events-none absolute -bottom-0.5 left-0 h-px w-full origin-right scale-x-0 bg-terracotta-deep transition-transform duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover/logo:origin-left group-hover/logo:scale-x-100" />
+            </span>
           </Link>
 
           {/* Desktop links */}
-          <ul className="hidden items-center gap-8 md:flex">
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="uppercase text-[0.7rem] tracking-[0.1em] font-sans text-brown-warm transition-colors duration-300 hover:text-terracotta"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+          <ul className="hidden items-center gap-9 md:flex">
+            {links.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`u-draw-link uppercase text-[0.7rem] tracking-[0.18em] font-sans transition-colors duration-500 ${
+                      active
+                        ? "text-terracotta-deep"
+                        : "text-brown-warm hover:text-terracotta-deep"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
           {/* Desktop CTA */}
@@ -97,22 +112,31 @@ export default function Nav() {
             : "opacity-0 pointer-events-none"
         }`}
       >
-        <ul className="flex flex-col items-center gap-8">
-          {links.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="font-serif text-3xl text-brown-deep transition-colors duration-300 hover:text-terracotta"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+        <ul className="flex flex-col items-center gap-7">
+          {links.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`font-serif text-3xl transition-colors duration-500 ${
+                    active ? "text-terracotta-deep italic" : "text-brown-deep hover:text-terracotta-deep"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="mt-12">
-          <Button href="/book" variant="default" onClick={() => setMenuOpen(false)}>
+          <Button
+            href="/book"
+            variant="default"
+            onClick={() => setMenuOpen(false)}
+          >
             Book a Session
           </Button>
         </div>

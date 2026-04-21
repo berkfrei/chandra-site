@@ -1,5 +1,6 @@
 import Reveal from "@/components/ui/reveal";
 import Divider from "@/components/ui/divider";
+import Sigil from "@/components/ui/sigil";
 import ContactForm from "@/components/booking/contact-form";
 
 export const metadata = {
@@ -10,48 +11,61 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-cream">
-      {/* ── Page Header ── */}
-      <section className="pt-32 pb-16 px-6 text-center">
-        <Reveal>
-          <p className="text-[0.7rem] tracking-[0.18em] uppercase text-brown-mid font-sans mb-5">
-            Contact
-          </p>
+      {/* ============================================
+          HERO
+          ============================================ */}
+      <section className="px-6 pt-36 pb-16 text-center lg:pt-48">
+        <Reveal variant="soft">
+          <p className="u-running-head text-brown-mid">Contact</p>
+          <div className="mt-8 flex justify-center text-gold animate-soft-pulse">
+            <Sigil size={26} />
+          </div>
         </Reveal>
-        <Reveal delay={100}>
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] text-brown-deep font-light leading-[1.15]">
-            Let&apos;s connect
+        <Reveal variant="soft" delay={150}>
+          <h1 className="text-display mt-8 text-5xl text-brown-deep md:text-7xl lg:text-[6rem]">
+            Let&rsquo;s
+            <br />
+            <em className="text-terracotta-deep">connect.</em>
           </h1>
         </Reveal>
       </section>
 
-      {/* ── Two-column: Info + Form ── */}
-      <section className="max-w-5xl mx-auto px-6 pb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+      <div className="mx-auto flex max-w-md justify-center py-4 text-gold/70">
+        <Divider sigil center tone="text-gold/70" />
+      </div>
+
+      {/* ============================================
+          TWO COLUMN — INFO + FORM
+          ============================================ */}
+      <section className="mx-auto max-w-5xl px-6 py-20 pb-32">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
           {/* Left: Contact Info */}
           <Reveal>
             <div>
-              <h2 className="font-serif text-2xl md:text-3xl text-brown-deep font-light mb-5">
-                I&apos;d love to hear from you
+              <p className="u-running-head text-brown-mid">Reach out</p>
+              <h2 className="mt-4 font-serif text-3xl font-light leading-tight text-brown-deep md:text-4xl">
+                I&rsquo;d love to
+                <br />
+                <em className="text-terracotta-deep">hear from you.</em>
               </h2>
 
-              <Divider />
+              <Divider className="mt-8" />
 
-              <p className="text-brown-mid text-[0.95rem] leading-[1.8] mt-6 mb-10">
+              <p className="mt-8 text-[0.95rem] leading-[1.8] text-brown-mid">
                 Whether you have a question about sessions, are curious about
                 birth doula support, or simply feel called to reach out —
                 I&apos;m here. There&apos;s no wrong reason to write.
               </p>
 
-              {/* Links */}
-              <div className="space-y-5">
+              <div className="mt-10 space-y-6">
                 <a
                   href="mailto:chandrafrei@gmail.com"
-                  className="flex items-baseline gap-3 group"
+                  className="group/item flex items-baseline gap-6 border-b border-cream-dark/70 pb-5"
                 >
-                  <span className="text-[0.7rem] tracking-[0.12em] uppercase text-brown-mid font-sans w-20 shrink-0">
+                  <span className="w-20 shrink-0 text-[0.68rem] uppercase tracking-[0.22em] text-brown-mid">
                     Email
                   </span>
-                  <span className="text-brown-deep text-[0.95rem] group-hover:text-terracotta transition-colors duration-300">
+                  <span className="u-draw-link font-serif text-lg text-brown-deep transition-colors duration-500 group-hover/item:text-terracotta-deep md:text-xl">
                     chandrafrei@gmail.com
                   </span>
                 </a>
@@ -60,15 +74,15 @@ export default function ContactPage() {
                   href="https://instagram.com/chandrafrei"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-baseline gap-3 group"
+                  className="group/item flex items-baseline gap-6 border-b border-cream-dark/70 pb-5"
                 >
-                  <span className="text-[0.7rem] tracking-[0.12em] uppercase text-brown-mid font-sans w-20 shrink-0">
+                  <span className="w-20 shrink-0 text-[0.68rem] uppercase tracking-[0.22em] text-brown-mid">
                     Instagram
                   </span>
-                  <span className="text-brown-deep text-[0.95rem] group-hover:text-terracotta transition-colors duration-300">
-                    @chandrafrei{" "}
-                    <span className="inline-block ml-1 transition-transform duration-300 group-hover:translate-x-1">
-                      &rarr;
+                  <span className="inline-flex items-baseline gap-2 font-serif text-lg text-brown-deep transition-colors duration-500 group-hover/item:text-terracotta-deep md:text-xl">
+                    <span className="u-draw-link">@chandrafrei</span>
+                    <span className="text-[0.7rem] transition-transform duration-500 group-hover/item:translate-x-0.5">
+                      ↗
                     </span>
                   </span>
                 </a>
@@ -77,15 +91,15 @@ export default function ContactPage() {
                   href="https://chandraspirit.substack.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-baseline gap-3 group"
+                  className="group/item flex items-baseline gap-6 border-b border-cream-dark/70 pb-5"
                 >
-                  <span className="text-[0.7rem] tracking-[0.12em] uppercase text-brown-mid font-sans w-20 shrink-0">
+                  <span className="w-20 shrink-0 text-[0.68rem] uppercase tracking-[0.22em] text-brown-mid">
                     Substack
                   </span>
-                  <span className="text-brown-deep text-[0.95rem] group-hover:text-terracotta transition-colors duration-300">
-                    Newsletter{" "}
-                    <span className="inline-block ml-1 transition-transform duration-300 group-hover:translate-x-1">
-                      &rarr;
+                  <span className="inline-flex items-baseline gap-2 font-serif text-lg text-brown-deep transition-colors duration-500 group-hover/item:text-terracotta-deep md:text-xl">
+                    <span className="u-draw-link">Newsletter</span>
+                    <span className="text-[0.7rem] transition-transform duration-500 group-hover/item:translate-x-0.5">
+                      ↗
                     </span>
                   </span>
                 </a>
@@ -95,7 +109,12 @@ export default function ContactPage() {
 
           {/* Right: Contact Form */}
           <Reveal delay={200}>
-            <div className="bg-parchment p-6 md:p-10">
+            <div className="relative bg-parchment p-6 md:p-10">
+              <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-cream px-3">
+                <div className="text-gold/80">
+                  <Sigil size={18} />
+                </div>
+              </div>
               <ContactForm />
             </div>
           </Reveal>
