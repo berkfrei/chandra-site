@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const FROM_EMAIL = process.env.FROM_EMAIL || 'Chandra <hello@chandra.com>';
+const FROM_EMAIL = process.env.FROM_EMAIL || 'Chandra <chandrafrei@gmail.com>';
 
 export async function sendBookingConfirmation(params: {
   clientName: string;
@@ -49,7 +49,7 @@ export async function sendBookingNotification(params: {
   time: string;
   timezone: string;
 }) {
-  const adminEmail = process.env.ADMIN_EMAIL || 'hello@chandra.com';
+  const adminEmail = process.env.ADMIN_EMAIL || 'chandrafrei@gmail.com';
   await resend.emails.send({
     from: FROM_EMAIL,
     to: adminEmail,

@@ -18,7 +18,7 @@ import {
 } from "date-fns";
 
 /* ─── Mock availability ─── */
-const AVAILABLE_DAYS = [2, 4]; // Tuesday, Thursday
+const AVAILABLE_DAYS: number[] = []; // No availability yet — update when schedule is set
 const SLOTS = ["10:00 AM", "11:30 AM", "1:00 PM", "2:30 PM"];
 
 function isAvailable(date: Date): boolean {
@@ -94,6 +94,32 @@ export default function BookingCalendar() {
 
   return (
     <div className="w-full">
+      {/* ── Availability Notice ── */}
+      <div className="mb-8 text-center">
+        <p className="font-serif text-lg italic text-brown-deep">
+          Online scheduling coming soon
+        </p>
+        <p className="mt-2 text-[0.85rem] leading-relaxed text-brown-mid">
+          I&rsquo;m currently booking sessions directly. Reach out and
+          we&rsquo;ll find a time that works for you.
+        </p>
+        <div className="mt-4 flex justify-center gap-3">
+          <a
+            href="mailto:chandrafrei@gmail.com"
+            className="text-[0.75rem] uppercase tracking-[0.1em] text-brown-warm hover:text-terracotta transition-colors"
+          >
+            Email me
+          </a>
+          <span className="text-brown-mid/40">|</span>
+          <a
+            href="tel:+18016477707"
+            className="text-[0.75rem] uppercase tracking-[0.1em] text-brown-warm hover:text-terracotta transition-colors"
+          >
+            Call / Text
+          </a>
+        </div>
+      </div>
+
       {/* ── Calendar Header ── */}
       <div className="flex items-center justify-between mb-8">
         <button

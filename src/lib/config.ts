@@ -9,8 +9,8 @@ export const defaultContent: SiteContent = {
   depositAmount: 50,
   sessionDuration: 60,
   bufferTime: 30,
-  contactEmail: 'hello@chandra.com',
-  instagramUrl: '#',
+  contactEmail: 'chandrafrei@gmail.com',
+  instagramUrl: 'https://instagram.com/chandrafrei',
   substackUrl: '#',
 };
 

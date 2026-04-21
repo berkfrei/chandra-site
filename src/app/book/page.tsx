@@ -55,9 +55,9 @@ export default function BookPage() {
               <div className="space-y-4 mb-10">
                 {[
                   { label: "Duration", value: "60 minutes" },
-                  { label: "Format", value: "Zoom / Google Meet" },
-                  { label: "Investment", value: "$— TBD" },
-                  { label: "Deposit", value: "$— TBD" },
+                  { label: "Format", value: "Zoom" },
+                  { label: "Investment", value: "$222" },
+                  { label: "Deposit", value: "$100" },
                 ].map(({ label, value }) => (
                   <div
                     key={label}
@@ -74,6 +74,17 @@ export default function BookPage() {
               </div>
 
               <p className="text-brown-mid/70 text-[0.82rem] leading-relaxed">
+                For in-person sessions, please reach out directly so we can
+                arrange the details:{" "}
+                <a href="mailto:chandrafrei@gmail.com" className="underline hover:text-terracotta transition-colors">
+                  chandrafrei@gmail.com
+                </a>{" "}
+                or{" "}
+                <a href="tel:+18016477707" className="underline hover:text-terracotta transition-colors">
+                  (801) 647-7707
+                </a>.
+              </p>
+              <p className="mt-4 text-brown-mid/70 text-[0.82rem] leading-relaxed">
                 After booking, you&apos;ll receive a confirmation email with
                 your session link and a brief welcome note. No intake forms,
                 no homework — just show up as you are.
@@ -133,23 +144,14 @@ export default function BookPage() {
 
               <div>
                 <h3 className="font-serif text-lg text-brown-deep mb-2">
-                  Late arrivals
-                </h3>
-                <p className="text-brown-mid text-[0.9rem] leading-[1.8]">
-                  If you arrive late, we&apos;ll still make the most of our
-                  remaining time together. Sessions cannot be extended beyond
-                  the scheduled window.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-serif text-lg text-brown-deep mb-2">
                   Recording
                 </h3>
                 <p className="text-brown-mid text-[0.9rem] leading-[1.8]">
-                  Sessions are not recorded by default. If you&apos;d like to
-                  record yours for personal use, just let me know at the
-                  start and we&apos;ll set that up together.
+                  Every session is recorded and shared with you afterward.
+                  The recording is an important part of the experience&nbsp;&mdash;
+                  so much comes through in a session, and being able to
+                  revisit it allows the messages to land even deeper over
+                  time.
                 </p>
               </div>
             </div>

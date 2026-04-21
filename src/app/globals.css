@@ -4,12 +4,12 @@
    DESIGN TOKENS
    ============================================ */
 @theme inline {
-  --color-cream: #F6F1EB;
-  --color-cream-dark: #EDE6DC;
-  --color-parchment: #FAF7F3;
-  --color-brown-deep: #3A2C27;
-  --color-brown-warm: #5C4A3E;
-  --color-brown-mid: #8B7355;
+  --color-cream: #F2E4CE;
+  --color-cream-dark: #E2D0B5;
+  --color-parchment: #F7EDDF;
+  --color-brown-deep: #362A1F;
+  --color-brown-warm: #5E4C38;
+  --color-brown-mid: #7D6545;
   --color-terracotta: #C08468;
   --color-terracotta-light: #D4A08A;
   --color-clay: #B07A62;

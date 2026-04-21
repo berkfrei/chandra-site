@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Reveal from "@/components/ui/reveal";
 import Button from "@/components/ui/button";
-import Divider from "@/components/ui/divider";
-import ImagePlaceholder from "@/components/ui/image-placeholder";
+
 
 export default function Home() {
   return (
@@ -12,15 +12,16 @@ export default function Home() {
           {/* Text */}
           <div>
             <p className="animate-fade-up text-[0.7rem] uppercase tracking-[0.18em] text-brown-mid">
-              Soul-centered guidance
+              The soul &middot; The channel &middot; The bridge
             </p>
             <h1 className="animate-fade-up mt-6 font-serif text-5xl font-light leading-[1.15] text-brown-deep md:text-6xl lg:text-7xl [animation-delay:150ms]">
-              Return to what you{" "}
-              <em className="text-terracotta">already know</em>
+              Your soul knows the way.
+              <br />
+              <em className="text-terracotta">Let her lead.</em>
             </h1>
             <p className="animate-fade-up mt-6 max-w-lg text-base leading-relaxed text-brown-warm [animation-delay:300ms]">
-              Channeling, sacred support, and soul-deep guidance for women ready
-              to come home to themselves.
+              Channeling, sacred support, and soul-deep guidance for those
+              ready to come home to themselves.
             </p>
             <div className="animate-fade-up mt-10 flex flex-wrap gap-4 [animation-delay:450ms]">
               <Button href="/book" variant="filled">
@@ -34,26 +35,20 @@ export default function Home() {
 
           {/* Image */}
           <div className="animate-fade-in [animation-delay:300ms]">
-            <ImagePlaceholder
-              aspectRatio="3/4"
-              description="Chandra in meditation"
-            />
+            <div
+              className="relative overflow-hidden bg-cream-dark"
+              style={{ aspectRatio: "2/3" }}
+            >
+              <Image
+                src="/images/chandra-golden-hour-self-portrait.jpg"
+                alt="Chandra in golden-hour light — a soft self-portrait through sunlit glass"
+                fill
+                priority
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* ===== INTRO ===== */}
-      <section className="px-6 py-24 lg:px-10 lg:py-32">
-        <div className="mx-auto max-w-2xl text-center">
-          <Reveal>
-            <Divider center />
-            <p className="mt-10 font-serif text-2xl font-light leading-relaxed text-brown-deep md:text-3xl">
-              There is a place in you that has never been lost&nbsp;&mdash; only
-              quiet. A place that remembers your wholeness, holds your truth, and{" "}
-              <em>knows the way home.</em>
-            </p>
-            <Divider center className="mt-10" />
-          </Reveal>
         </div>
       </section>
 
@@ -77,17 +72,18 @@ export default function Home() {
                   01
                 </span>
                 <h3 className="mt-4 font-serif text-2xl font-light text-brown-deep">
-                  Channeling Sessions
+                  Soul Chats
                 </h3>
+                <p className="mt-2 text-sm font-medium tracking-wide text-terracotta">
+                  One-to-one channeling sessions
+                </p>
                 <p className="mt-3 text-sm leading-relaxed text-brown-warm">
-                  Receive guidance directly from your higher self, spirit
-                  guides, and the energetic field that holds your soul&rsquo;s
-                  blueprint. Each session is unique, intuitive, and deeply
-                  personal.
+                  I become a vessel. Your soul speaks. And the rest unfolds
+                  from there.
                 </p>
                 <div className="mt-6">
-                  <Button href="/book" variant="ghost">
-                    Book Now
+                  <Button href="/offerings" variant="ghost">
+                    Learn More
                   </Button>
                 </div>
               </div>
@@ -104,15 +100,16 @@ export default function Home() {
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-brown-warm">
                   Sacred companionship through life&rsquo;s most profound
-                  thresholds&nbsp;&mdash; birth, loss, transition, and becoming.
-                  Grounded in presence, ritual, and deep listening.
+                  threshold&nbsp;&mdash; pregnancy, birth, and the tender
+                  passage into motherhood. Grounded in presence, ritual, and
+                  deep listening.
                 </p>
                 <span className="mt-4 inline-block text-[0.65rem] uppercase tracking-[0.14em] text-terracotta">
                   Accepting inquiries
                 </span>
                 <div className="mt-4">
-                  <Button href="/contact" variant="ghost">
-                    Inquire
+                  <Button href="/doula" variant="ghost">
+                    Learn More
                   </Button>
                 </div>
               </div>
@@ -125,12 +122,11 @@ export default function Home() {
                   03
                 </span>
                 <h3 className="mt-4 font-serif text-2xl font-light text-brown-deep">
-                  Meditation Bundles
+                  Channeled Meditations
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-brown-warm">
-                  Guided audio meditations designed to reconnect you with your
-                  inner stillness, ancestral wisdom, and the rhythms of your
-                  own sacred body.
+                  Channeled meditations&nbsp;&mdash; doorways to your soul,
+                  your body, the Earth Mother, and the realms she holds.
                 </p>
                 <span className="mt-4 inline-block text-[0.65rem] uppercase tracking-[0.14em] text-sage">
                   Coming soon
@@ -145,10 +141,18 @@ export default function Home() {
       <section className="px-6 py-24 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 md:gap-16">
           <Reveal>
-            <ImagePlaceholder
-              aspectRatio="4/5"
-              description="Sunlit hands holding dried flowers"
-            />
+            <div
+              className="relative overflow-hidden"
+              style={{ aspectRatio: "4/5" }}
+            >
+              <Image
+                src="/images/red-rocks-golden-hour.jpg"
+                alt="Red rock landscape bathed in golden-hour light — Utah mountains at sunset"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </Reveal>
 
           <Reveal delay={150}>
@@ -168,15 +172,19 @@ export default function Home() {
                   },
                   {
                     label: "Clarity",
-                    desc: "The fog lifts. You begin to see your path with quiet certainty.",
+                    desc: "The fog lifts. You begin to trust — yourself, the path, and the unseen hands guiding you.",
                   },
                   {
                     label: "Trust",
-                    desc: "A deepening relationship with your own inner voice and spiritual support.",
+                    desc: "A deepening relationship with the voice of your soul, the voice of the Mother (the Earth and her Higher Self), and all your spiritual support.",
                   },
                   {
                     label: "Alignment",
-                    desc: "Life begins to reflect who you truly are, not who you were told to be.",
+                    desc: "As you begin to hold a higher frequency, your reality rearranges to match it.",
+                  },
+                  {
+                    label: "Sovereignty",
+                    desc: "You stop outsourcing your knowing. You remember. You reclaim your sovereignty and start to live a soul-led, heart-centered life.",
                   },
                 ].map((item, i) => (
                   <div
@@ -204,22 +212,17 @@ export default function Home() {
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
             <div className="mx-auto h-56 w-56 overflow-hidden rounded-full">
-              <ImagePlaceholder
-                aspectRatio="1/1"
-                description="Chandra portrait"
-                className="h-full w-full"
+              <Image
+                src="/images/chandra-portrait-smiling.jpg"
+                alt="Chandra smiling — warm portrait"
+                width={224}
+                height={224}
+                className="h-full w-full object-cover"
               />
             </div>
             <h2 className="mt-8 font-serif text-4xl font-light text-brown-deep">
               Hi, I&rsquo;m Chandra
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-brown-warm">
-              I spent years searching outside myself for answers that were
-              already within. Through my own unraveling and return, I discovered
-              the gifts I now share&nbsp;&mdash; channeling, sacred presence,
-              and the quiet power of deep listening. My path wasn&rsquo;t
-              linear, but it was mine. And yours is yours.
-            </p>
             <div className="mt-8">
               <Button href="/about" variant="ghost">
                 Read my story

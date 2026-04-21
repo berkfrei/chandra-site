@@ -45,19 +45,19 @@ export default function ContactPage() {
               {/* Links */}
               <div className="space-y-5">
                 <a
-                  href="mailto:hello@chandraspirit.com"
+                  href="mailto:chandrafrei@gmail.com"
                   className="flex items-baseline gap-3 group"
                 >
                   <span className="text-[0.7rem] tracking-[0.12em] uppercase text-brown-mid font-sans w-20 shrink-0">
                     Email
                   </span>
                   <span className="text-brown-deep text-[0.95rem] group-hover:text-terracotta transition-colors duration-300">
-                    hello@chandraspirit.com
+                    chandrafrei@gmail.com
                   </span>
                 </a>
 
                 <a
-                  href="https://instagram.com/chandraspirit"
+                  href="https://instagram.com/chandrafrei"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-baseline gap-3 group"
@@ -66,7 +66,7 @@ export default function ContactPage() {
                     Instagram
                   </span>
                   <span className="text-brown-deep text-[0.95rem] group-hover:text-terracotta transition-colors duration-300">
-                    @chandraspirit{" "}
+                    @chandrafrei{" "}
                     <span className="inline-block ml-1 transition-transform duration-300 group-hover:translate-x-1">
                       &rarr;
                     </span>

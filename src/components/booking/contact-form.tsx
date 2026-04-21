@@ -90,10 +90,9 @@ export default function ContactForm() {
           <option value="" disabled>
             Select a reason
           </option>
-          <option value="session">Session question</option>
+          <option value="session">Book a channeling session</option>
           <option value="doula">Doula inquiry</option>
           <option value="collaboration">Collaboration</option>
-          <option value="general">General</option>
         </select>
       </div>
 

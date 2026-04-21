@@ -3,14 +3,15 @@ import Link from "next/link";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Offerings", href: "/offerings" },
+  { label: "Soul Work", href: "/offerings" },
+  { label: "Doula", href: "/doula" },
   { label: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
-  { label: "Instagram", href: "https://instagram.com" },
+  { label: "Instagram", href: "https://instagram.com/chandrafrei" },
   { label: "Substack", href: "https://substack.com" },
-  { label: "Email", href: "mailto:hello@chandra.com" },
+  { label: "Email", href: "mailto:chandrafrei@gmail.com" },
 ];
 
 export default function Footer() {
@@ -18,15 +19,7 @@ export default function Footer() {
     <footer className="border-t border-cream-dark bg-cream px-6 pt-20 pb-10 lg:px-10">
       <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-3">
         {/* Left — Brand */}
-        <div>
-          <Link href="/" className="font-serif text-2xl text-brown-deep">
-            Chandra
-          </Link>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-brown-mid">
-            Guiding you gently back to yourself through sacred practice, energy
-            work, and intuitive wisdom.
-          </p>
-        </div>
+        <div></div>
 
         {/* Center — Nav */}
         <div className="flex flex-col gap-3">
