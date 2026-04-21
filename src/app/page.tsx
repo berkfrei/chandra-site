@@ -66,7 +66,7 @@ export default function Home() {
       {/* ============================================
           HERO — asymmetric editorial composition
           ============================================ */}
-      <section className="relative min-h-[92vh] overflow-hidden px-6 pt-32 pb-16 lg:px-10 lg:pt-40 lg:pb-24">
+      <section className="relative overflow-hidden px-6 pt-32 pb-16 lg:px-10 lg:pt-36 lg:pb-20">
         {/* Vertical running-head down the left edge (desktop) */}
         <div className="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 lg:block">
           <p className="u-vertical-rl u-running-head whitespace-nowrap text-brown-mid/70">
@@ -83,10 +83,10 @@ export default function Home() {
           </Reveal>
         </div>
 
-        <div className="relative mx-auto mt-10 grid max-w-7xl grid-cols-12 items-center gap-y-12 md:mt-16 md:gap-x-8 lg:mt-20">
+        <div className="relative mx-auto mt-10 grid max-w-7xl grid-cols-12 items-center gap-y-12 md:mt-12 md:gap-x-8 lg:mt-14">
           {/* Headline — spans 7 cols, overlaps the image column by 1 */}
           <div className="relative z-10 col-span-12 md:col-span-8 lg:col-span-7">
-            <h1 className="text-display text-[13.5vw] leading-[0.95] text-brown-deep sm:text-[11vw] md:text-[9.5vw] lg:text-[8.2vw] xl:text-[7.6rem]">
+            <h1 className="text-display text-[13vw] leading-[0.95] text-brown-deep sm:text-[10.5vw] md:text-[8.8vw] lg:text-[7.2vw] xl:text-[6.6rem]">
               <WordReveal text="Your soul" delay={120} stagger={110} />
               <br />
               <WordReveal text="knows the way." delay={360} stagger={110} />
@@ -121,31 +121,31 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Portrait — col-span-6, overlapped 1 col with headline on desktop */}
-          <div className="relative col-span-12 -mx-2 md:-mx-0 md:col-span-5 md:col-start-8 lg:col-span-6 lg:col-start-7 lg:-mr-10">
+          {/* Portrait — col-span-5, clean margin from headline on desktop */}
+          <div className="relative col-span-12 md:col-span-4 md:col-start-9 lg:col-span-5 lg:col-start-8">
             <Reveal variant="soft" delay={250}>
               <div className="relative">
                 {/* Slow-rotating sun sigil behind the image as a halo */}
                 <div
-                  className="pointer-events-none absolute -left-10 -top-10 hidden text-gold/40 lg:block"
+                  className="pointer-events-none absolute -right-8 -top-8 hidden text-gold/35 lg:block"
                   aria-hidden="true"
                 >
                   <div className="animate-slow-rotate">
-                    <Sigil size={180} variant="sun" />
+                    <Sigil size={140} variant="sun" />
                   </div>
                 </div>
 
-                <Parallax speed={0.08}>
+                <Parallax speed={0.06}>
                   <div
                     className="img-ember-bleed img-vignette relative overflow-hidden bg-cream-dark"
-                    style={{ aspectRatio: "3/4" }}
+                    style={{ aspectRatio: "4/5" }}
                   >
                     <Image
                       src="/images/chandra-golden-hour-self-portrait.jpg"
                       alt="Chandra in golden-hour light — a soft self-portrait through sunlit glass"
                       fill
                       priority
-                      sizes="(min-width: 1024px) 50vw, (min-width: 768px) 45vw, 100vw"
+                      sizes="(min-width: 1024px) 40vw, (min-width: 768px) 35vw, 100vw"
                       className="object-cover"
                     />
                   </div>
