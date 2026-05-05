@@ -5,7 +5,6 @@ import Sigil from "@/components/ui/sigil";
 import Parallax from "@/components/ui/parallax";
 import Image from "next/image";
 
-const roman = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"];
 
 const supportWays = [
   {
@@ -103,10 +102,6 @@ export default function DoulaPage() {
                         sizes="(min-width: 768px) 40vw, 100vw"
                         className="object-cover"
                       />
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brown-ink/55 via-brown-ink/10 to-transparent" />
-                      <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
-                        First arrivals, held.
-                      </p>
                     </div>
                   </Parallax>
                 </div>
@@ -205,9 +200,7 @@ export default function DoulaPage() {
                       !isBottomRow ? "border-b border-cream-dark/70" : ""
                     } ${isRightCol ? "md:pl-10" : "md:pr-10"}`}
                   >
-                    <span className="shrink-0 font-serif text-5xl italic font-light text-gold md:text-6xl">
-                      {roman[i]}
-                    </span>
+                    <span className="shrink-0 block h-2 w-2 rounded-full bg-gold mt-3" />
                     <div>
                       <h3 className="font-serif text-2xl font-light leading-tight text-brown-deep md:text-3xl">
                         {item.title}
@@ -287,7 +280,7 @@ export default function DoulaPage() {
                 <em>The Seed</em>
               </h3>
               <p className="mt-5 text-center font-serif text-3xl font-light text-brown-deep md:text-4xl">
-                $1,500
+                $1,200
               </p>
               <Divider center className="mt-10" />
 
@@ -304,7 +297,7 @@ export default function DoulaPage() {
                     className="flex items-baseline gap-5 border-b border-cream-dark/80 pb-4 last:border-0"
                   >
                     <span className="shrink-0 font-serif text-lg italic text-gold md:text-xl">
-                      {roman[i]}.
+                      {i + 1}.
                     </span>
                     <span className="font-serif text-[1.05rem] leading-snug text-brown-deep md:text-lg">
                       {item}
@@ -315,7 +308,7 @@ export default function DoulaPage() {
 
               <p className="mx-auto mt-12 max-w-lg text-center font-serif text-sm italic leading-relaxed text-brown-mid md:text-base">
                 A $500 deposit is due at booking, with the remainder due by
-                36&nbsp;weeks. Payment plans are available — let&rsquo;s find
+                38&nbsp;weeks. Payment plans are available — let&rsquo;s find
                 what works for you.
               </p>
 

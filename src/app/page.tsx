@@ -12,7 +12,7 @@ const offerings = [
     number: "i",
     title: "Soul Chats",
     subtitle: "One-to-one channeling sessions",
-    body: "I become a vessel. Your soul speaks. And the rest unfolds from there.",
+    body: "I become a vessel. Your soul speaks.",
     href: "/offerings",
     status: null as string | null,
     statusTone: null as "terracotta" | "sage" | null,
@@ -53,7 +53,7 @@ const shifts = [
   },
   {
     label: "Clarity",
-    desc: "The fog lifts. You begin to trust — yourself, the path, and the unseen hands guiding you.",
+    desc: "The fog lifts. You begin to see clearly — what's yours, what's not, and where your soul is leading you.",
   },
   {
     label: "Trust",
@@ -76,14 +76,7 @@ export default function Home() {
           HERO — asymmetric editorial composition
           ============================================ */}
       <section className="relative overflow-hidden px-6 pt-32 pb-16 lg:px-10 lg:pt-36 lg:pb-20">
-        {/* Vertical running-head down the left edge (desktop) */}
-        <div className="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 lg:block">
-          <p className="u-vertical-rl u-running-head whitespace-nowrap text-brown-mid/70">
-            Est. 2026 &nbsp;·&nbsp; Draper, Utah &nbsp;·&nbsp; One to one
-          </p>
-        </div>
-
-        {/* Masthead */}
+{/* Masthead */}
         <div className="relative mx-auto max-w-7xl">
           <Reveal variant="soft">
             <p className="u-running-head text-brown-mid">
@@ -162,11 +155,6 @@ export default function Home() {
                       sizes="(min-width: 1024px) 40vw, (min-width: 768px) 35vw, 100vw"
                       className="object-cover"
                     />
-                    {/* Caption on photo */}
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brown-ink/55 via-brown-ink/10 to-transparent" />
-                    <p className="pointer-events-none absolute bottom-3 left-4 font-serif text-sm italic text-cream/95">
-                      Golden hour, held in her own light.
-                    </p>
                   </div>
                 </Parallax>
               </div>
@@ -201,11 +189,6 @@ export default function Home() {
       <section className="px-6 py-28 lg:px-10 lg:py-40">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <div className="mb-4 flex items-center justify-center gap-4 text-terracotta/70">
-              <span className="h-px w-10 bg-current opacity-60" />
-              <Sigil size={18} />
-              <span className="h-px w-10 bg-current opacity-60" />
-            </div>
             <p className="u-running-head text-center text-brown-mid">
               How we can work together
             </p>
@@ -214,75 +197,41 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          {/* Triptych — three columns, each a photo + editorial entry */}
-          <div className="mt-20 grid gap-y-16 md:grid-cols-3 md:gap-x-10 md:gap-y-0">
+          {/* Three cards — clean bordered boxes */}
+          <div className="mt-20 grid gap-8 md:grid-cols-3">
             {offerings.map((item, i) => (
               <Reveal key={item.title} variant="soft" delay={i * 120}>
-                <article
-                  className={`group/card flex h-full flex-col ${
-                    i > 0 ? "md:border-l md:border-cream-dark/60 md:pl-10" : ""
-                  }`}
-                >
-                  {/* Photo — shared aspect, consistent mat */}
-                  <div className="relative">
-                    {/* Offset shadow-card behind the image */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-0 translate-x-2 translate-y-2 bg-brown-deep/10 transition-transform duration-700 ease-out group-hover/card:translate-x-1 group-hover/card:translate-y-1"
-                    />
-                    <div
-                      className="relative overflow-hidden bg-cream-dark ring-1 ring-gold/25"
-                      style={{ aspectRatio: "4/5" }}
-                    >
-                      <Image
-                        src={item.image}
-                        alt={item.imageAlt}
-                        fill
-                        sizes="(min-width: 1024px) 28vw, (min-width: 768px) 32vw, 100vw"
-                        className="object-cover transition-transform duration-[1400ms] ease-out group-hover/card:scale-[1.02]"
-                        style={{ objectPosition: item.imagePosition }}
-                      />
-                      {/* Numeral overlay, bottom-left, on a soft gradient */}
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brown-ink/55 via-brown-ink/15 to-transparent" />
-                      <span className="pointer-events-none absolute bottom-3 left-4 font-serif text-4xl italic text-cream/95 md:text-5xl">
-                        {item.number}
+                <div className="flex h-full flex-col border border-cream-dark p-8 md:p-10">
+                  <h3 className="font-serif text-2xl font-light text-brown-deep">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 font-serif text-base italic text-terracotta-deep">
+                    {item.subtitle}
+                  </p>
+                  <p className="mt-3 text-[0.95rem] leading-[1.65] text-brown-warm">
+                    {item.body}
+                  </p>
+
+                  <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-6">
+                    {item.href ? (
+                      <Button href={item.href} variant="ghost">
+                        Learn more
+                      </Button>
+                    ) : null}
+                    {item.status ? (
+                      <span
+                        className={`inline-flex items-center gap-2 text-[0.66rem] uppercase tracking-[0.2em] ${
+                          item.statusTone === "sage"
+                            ? "text-sage"
+                            : "text-terracotta"
+                        }`}
+                      >
+                        <span className="block h-1 w-1 rounded-full bg-current" />
+                        {item.status}
                       </span>
-                    </div>
+                    ) : null}
                   </div>
-
-                  {/* Text */}
-                  <div className="mt-7 flex flex-1 flex-col">
-                    <h3 className="font-serif text-3xl font-light leading-[1.1] text-brown-deep md:text-[2rem]">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 font-serif text-base italic leading-snug text-terracotta-deep md:text-lg">
-                      {item.subtitle}
-                    </p>
-                    <p className="mt-4 text-[0.95rem] leading-[1.65] text-brown-warm">
-                      {item.body}
-                    </p>
-
-                    <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-6">
-                      {item.href ? (
-                        <Button href={item.href} variant="ghost">
-                          Learn more
-                        </Button>
-                      ) : null}
-                      {item.status ? (
-                        <span
-                          className={`inline-flex items-center gap-2 text-[0.66rem] uppercase tracking-[0.2em] ${
-                            item.statusTone === "sage"
-                              ? "text-sage"
-                              : "text-terracotta"
-                          }`}
-                        >
-                          <span className="block h-1 w-1 rounded-full bg-current" />
-                          {item.status}
-                        </span>
-                      ) : null}
-                    </div>
-                  </div>
-                </article>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -293,41 +242,7 @@ export default function Home() {
           TRANSFORMATION — "A return to yourself"
           ============================================ */}
       <section className="relative overflow-hidden bg-parchment px-6 py-28 lg:px-10 lg:py-40">
-        <div className="mx-auto grid max-w-7xl grid-cols-12 items-start gap-y-14 md:gap-x-10">
-          {/* Image column — full height, with parallax */}
-          <div className="col-span-12 md:col-span-6 lg:col-span-5">
-            <Reveal variant="soft">
-              <div className="sticky top-32">
-                <div className="relative">
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 translate-x-3 translate-y-3 bg-terracotta-deep/18"
-                  />
-                  <Parallax speed={0.12}>
-                    <div
-                      className="img-ember-bleed relative overflow-hidden ring-1 ring-gold/25"
-                      style={{ aspectRatio: "4/5" }}
-                    >
-                      <Image
-                        src="/images/red-rocks-golden-hour.jpg"
-                        alt="Red rock landscape bathed in golden-hour light"
-                        fill
-                        sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
-                        className="object-cover"
-                      />
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brown-ink/55 via-brown-ink/10 to-transparent" />
-                      <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
-                        Utah, at the edge of light.
-                      </p>
-                    </div>
-                  </Parallax>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Text column */}
-          <div className="col-span-12 md:col-span-6 lg:col-span-6 lg:col-start-7">
+        <div className="mx-auto max-w-3xl">
             <Reveal>
               <p className="u-running-head text-brown-mid">What shifts</p>
               <h2 className="text-display mt-4 text-5xl text-brown-deep md:text-6xl lg:text-7xl">
@@ -356,56 +271,37 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
-          </div>
         </div>
       </section>
 
       {/* ============================================
           ABOUT PREVIEW — chapter tease, asymmetric
           ============================================ */}
-      <section className="relative overflow-hidden px-6 py-28 lg:px-10 lg:py-36">
-        <div className="mx-auto grid max-w-6xl grid-cols-12 items-center gap-y-10 md:gap-x-12">
-          <div className="order-2 col-span-12 md:order-1 md:col-span-7">
-            <Reveal>
-              <p className="u-running-head text-brown-mid">The channel</p>
-              <h2 className="text-display mt-4 text-5xl text-brown-deep md:text-6xl lg:text-7xl">
-                Hi, I&rsquo;m
-                <br />
-                <em className="text-terracotta-deep">Chandra.</em>
-              </h2>
-              <p className="mt-8 max-w-xl font-serif text-xl italic leading-relaxed text-brown-warm md:text-2xl">
-                A channel, a bridge, a vessel — held in the frequencies of the
-                Mother, walking beside those ready to come home to themselves.
-              </p>
-              <div className="mt-10">
-                <Button href="/about" variant="ghost">
-                  Read her story
-                </Button>
-              </div>
-            </Reveal>
-          </div>
-          <div className="order-1 col-span-12 md:order-2 md:col-span-5">
-            <Reveal variant="soft" delay={150}>
-              <div className="group/portrait relative">
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 translate-x-3 translate-y-3 bg-brown-deep/15 transition-transform duration-700 ease-out group-hover/portrait:translate-x-2 group-hover/portrait:translate-y-2"
-                />
-                <div
-                  className="img-vignette relative overflow-hidden bg-cream-dark ring-1 ring-gold/30"
-                  style={{ aspectRatio: "4/5" }}
-                >
-                  <Image
-                    src="/images/chandra-portrait-smiling.jpg"
-                    alt="Chandra smiling — a warm portrait"
-                    fill
-                    sizes="(min-width: 768px) 40vw, 100vw"
-                    className="object-cover transition-transform duration-[1400ms] ease-out group-hover/portrait:scale-[1.02]"
-                  />
-                </div>
-              </div>
-            </Reveal>
-          </div>
+      <section className="px-6 py-28 lg:px-10 lg:py-36">
+        <div className="mx-auto max-w-2xl text-center">
+          <Reveal>
+            <div className="mx-auto h-56 w-56 overflow-hidden rounded-full">
+              <Image
+                src="/images/chandra-portrait-smiling.jpg"
+                alt="Chandra smiling — warm portrait"
+                width={224}
+                height={224}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <h2 className="text-display mt-8 text-4xl text-brown-deep md:text-5xl">
+              Hi, I&rsquo;m <em className="text-terracotta-deep">Chandra.</em>
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl font-serif text-xl italic leading-relaxed text-brown-warm">
+              A channel, a bridge, a vessel &mdash; held in the frequencies of
+              the Mother, walking beside those ready to come home to themselves.
+            </p>
+            <div className="mt-8">
+              <Button href="/about" variant="ghost">
+                Read my story
+              </Button>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -421,7 +317,7 @@ export default function Home() {
               <span className="h-px w-10 bg-current opacity-60" />
             </div>
             <p className="u-running-head text-center text-gold-light/70">
-              Words from those who&rsquo;ve walked this path
+              Words from those who&rsquo;ve worked with me
             </p>
           </Reveal>
 
@@ -492,7 +388,7 @@ export default function Home() {
               <em className="text-terracotta-deep">it all figured out.</em>
             </h2>
             <p className="mt-6 font-serif text-xl italic text-brown-warm md:text-2xl">
-              Just a willingness to listen — to yourself, again.
+              Just a willingness to listen to the voice of your&nbsp;own&nbsp;soul.
             </p>
             <Divider sigil center tone="text-gold" className="mt-12" />
             <div className="mt-12 flex flex-wrap justify-center gap-5">

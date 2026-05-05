@@ -13,7 +13,6 @@ const soulChatReceives = [
   "Insights into your soul gifts and how to work with them",
 ];
 
-const romanNumerals = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"];
 
 export default function OfferingsPage() {
   return (
@@ -68,16 +67,12 @@ export default function OfferingsPage() {
                       style={{ aspectRatio: "3/4" }}
                     >
                       <Image
-                        src="/images/earth-lichen-texture.jpg"
-                        alt="Earthy lichen texture on rock — amber, rust, and gold tones"
+                        src="/images/sunset-clouds-vertical.jpg"
+                        alt="Blue sky with a single soft cloud stretching across it"
                         fill
                         sizes="(min-width: 768px) 40vw, 100vw"
                         className="object-cover"
                       />
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brown-ink/55 via-brown-ink/10 to-transparent" />
-                      <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
-                        Lichen, where stone meets life.
-                      </p>
                     </div>
                   </Parallax>
                 </div>
@@ -88,16 +83,7 @@ export default function OfferingsPage() {
           {/* Content column */}
           <div className="col-span-12 md:col-span-7">
             <Reveal delay={150}>
-              <div className="flex items-baseline gap-6">
-                <span className="font-serif text-8xl italic font-light text-gold md:text-9xl">
-                  i
-                </span>
-                <span className="inline-flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.22em] text-terracotta">
-                  <span className="block h-px w-6 bg-current opacity-60" />
-                  Primary Offering
-                </span>
-              </div>
-              <h2 className="text-display mt-4 text-5xl text-brown-deep md:text-6xl lg:text-7xl">
+              <h2 className="text-display text-5xl text-brown-deep md:text-6xl lg:text-7xl">
                 Soul Chats
               </h2>
               <p className="mt-3 font-serif text-xl italic text-terracotta-deep md:text-2xl">
@@ -140,9 +126,7 @@ export default function OfferingsPage() {
                       key={i}
                       className="group/item flex items-baseline gap-6 border-b border-cream-dark/70 pb-5 last:border-0"
                     >
-                      <span className="shrink-0 font-serif text-xl italic text-gold transition-colors duration-500 group-hover/item:text-terracotta-deep md:text-2xl">
-                        {romanNumerals[i]}.
-                      </span>
+                      <span className="shrink-0 block h-1.5 w-1.5 rounded-full bg-gold mt-2" />
                       <span className="font-serif text-lg leading-snug text-brown-deep md:text-xl">
                         {text}
                       </span>
@@ -187,15 +171,10 @@ export default function OfferingsPage() {
           {/* Content column first (reversed) */}
           <div className="order-2 col-span-12 md:order-1 md:col-span-7">
             <Reveal>
-              <div className="flex items-baseline gap-6">
-                <span className="font-serif text-8xl italic font-light text-gold md:text-9xl">
-                  ii
-                </span>
-                <span className="inline-flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.22em] text-sage">
-                  <span className="block h-px w-6 bg-current opacity-60" />
-                  Coming Soon
-                </span>
-              </div>
+              <p className="inline-flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.22em] text-sage">
+                <span className="block h-1 w-1 rounded-full bg-current" />
+                Coming Soon
+              </p>
               <h2 className="text-display mt-4 text-5xl text-brown-deep md:text-6xl lg:text-7xl">
                 Channeled
                 <br />
@@ -248,10 +227,6 @@ export default function OfferingsPage() {
                         sizes="(min-width: 768px) 40vw, 100vw"
                         className="object-cover"
                       />
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brown-ink/55 via-brown-ink/10 to-transparent" />
-                      <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
-                        Light through the veil.
-                      </p>
                     </div>
                   </Parallax>
                 </div>

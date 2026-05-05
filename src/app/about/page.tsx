@@ -45,8 +45,6 @@ export default function AboutPage() {
         <Reveal variant="soft" delay={300}>
           <p className="mx-auto mt-8 max-w-md font-serif text-xl italic text-brown-warm md:text-2xl">
             channel &middot; bridge &middot; vessel
-            <br />
-            mother, daughter, soul-led
           </p>
         </Reveal>
       </section>
@@ -70,18 +68,13 @@ export default function AboutPage() {
                     style={{ aspectRatio: "4/5" }}
                   >
                     <Image
-                      src="/images/chandra-maternity-portrait.jpg"
-                      alt="Chandra in a maternity portrait — soft, grounded, held"
+                      src="/images/chandra-portrait-smiling.jpg"
+                      alt="Chandra smiling — warm portrait in a pink dress"
                       fill
                       sizes="(min-width: 768px) 42vw, 100vw"
                       className="object-cover transition-transform duration-[1400ms] ease-out group-hover/portrait:scale-[1.02]"
                       style={{ objectPosition: "50% 30%" }}
                     />
-                    {/* Editorial caption over the photo */}
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brown-ink/60 via-brown-ink/15 to-transparent" />
-                    <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
-                      Mother, carrier, vessel.
-                    </p>
                   </div>
                 </Parallax>
               </div>
@@ -91,17 +84,18 @@ export default function AboutPage() {
           <div className="col-span-12 md:col-span-7 md:pl-6 lg:pl-10">
             <Reveal delay={150}>
               <p className="font-serif text-3xl font-light leading-[1.25] text-brown-deep md:text-4xl lg:text-[2.6rem]">
-                I&rsquo;m a <em className="text-terracotta-deep">channel</em> and
-                a <em className="text-terracotta-deep">bridge</em> — a vessel
+                I&rsquo;m a <em className="text-terracotta-deep">channel</em>, a{" "}
+                <em className="text-terracotta-deep">healer</em>, and a{" "}
+                <em className="text-terracotta-deep">bridge</em> — a vessel
                 through which your higher self, your spirit guides, your angels,
                 and your ancestors can speak, held in the frequencies of the
                 Mother.
               </p>
               <p className="mt-8 max-w-xl text-base leading-relaxed text-brown-warm md:text-[1.05rem]">
-                My work lives at the intersection of intuition, energy, and the
-                sacred. I help people reconnect with the knowing they&rsquo;ve
-                always carried — the voice beneath the noise, the truth beneath
-                the conditioning, the self beneath the story.
+                I help people hear the voice of their own soul — the one
+                that&rsquo;s been waiting beneath the noise, the conditioning,
+                and the stories we carry. My work is helping you find your
+                way back to that voice.
               </p>
             </Reveal>
           </div>
@@ -176,10 +170,6 @@ export default function AboutPage() {
                     sizes="(min-width: 1024px) 60vw, 100vw"
                     className="object-cover"
                   />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brown-ink/45 to-transparent" />
-                  <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
-                    September, the sky opening.
-                  </p>
                 </div>
               </Parallax>
             </div>
@@ -255,9 +245,6 @@ export default function AboutPage() {
                             "linear-gradient(180deg, rgba(35,24,16,0.2) 0%, rgba(35,24,16,0.6) 100%)",
                         }}
                       />
-                      <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
-                        Into the dark, on the way to the light.
-                      </p>
                     </div>
                   </Parallax>
                 </div>
@@ -300,7 +287,7 @@ export default function AboutPage() {
                 <p className="mt-6 font-serif text-lg leading-[1.7] text-cream/95 md:text-xl">
                   I spent the last year and a half deep in this underworld,
                   gathering every part of my fragmented heart, moving through
-                  mountains of grief. Every ego death opened a deeper trust.
+                  mountains of grief. Every ego death opened a deeper trust. My soul never left my side. Her voice guided me through every threshold.
                 </p>
                 <p className="mt-10 font-serif text-2xl italic leading-snug text-terracotta-light md:text-3xl">
                   It was the hardest year and a half of my life — and the most
@@ -345,10 +332,6 @@ export default function AboutPage() {
                     sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover"
                   />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-brown-ink/55 via-brown-ink/10 to-transparent" />
-                  <p className="pointer-events-none absolute bottom-4 left-5 font-serif text-sm italic text-cream/95">
-                    Emerging into her own light.
-                  </p>
                 </div>
               </Parallax>
             </div>
@@ -414,28 +397,15 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-24 space-y-20 md:space-y-28">
+          <div className="mt-16 space-y-10 md:space-y-12">
             {philosophy.map((p, i) => (
-              <div key={i}>
-                <Reveal variant="rise" delay={i * 80}>
-                  <p
-                    className={`mx-auto max-w-2xl font-serif text-2xl italic leading-[1.4] text-brown-deep md:text-3xl lg:text-4xl ${
-                      p.align === "right"
-                        ? "md:ml-auto md:text-right"
-                        : "md:mr-auto md:text-left"
-                    }`}
-                  >
-                    {p.text}
-                  </p>
-                </Reveal>
-                {i < philosophy.length - 1 ? (
-                  <Reveal variant="soft">
-                    <div className="mt-20 flex justify-center text-gold/70 md:mt-28">
-                      <Sigil size={18} />
-                    </div>
-                  </Reveal>
-                ) : null}
-              </div>
+              <Reveal key={i} variant="rise" delay={i * 80}>
+                <p
+                  className="mx-auto max-w-2xl font-serif text-lg italic leading-[1.5] text-brown-deep md:text-xl lg:text-2xl"
+                >
+                  {p.text}
+                </p>
+              </Reveal>
             ))}
           </div>
         </div>

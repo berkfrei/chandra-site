@@ -50,19 +50,20 @@ export default function BookPage() {
             <div className="lg:sticky lg:top-32">
               <p className="u-running-head text-brown-mid">The offering</p>
               <h2 className="mt-4 font-serif text-3xl font-light leading-tight text-brown-deep md:text-4xl">
-                1:1 Channeling
-                <br />
-                <em className="text-terracotta-deep">session.</em>
+                Soul <em className="text-terracotta-deep">Chat.</em>
               </h2>
+              <p className="mt-3 font-serif text-lg italic text-terracotta-deep">
+                A one-to-one channeling session
+              </p>
 
               <Divider className="mt-8" />
 
               <p className="mt-8 text-[0.95rem] leading-[1.8] text-brown-mid">
-                A channeling session is a sacred space where I connect with
-                higher-dimensional guidance on your behalf. Together, we
-                explore whatever is most alive for you — whether that&apos;s a
-                specific question, a life transition, or simply a desire for
-                deeper clarity. Each session is unique, unscripted, and led
+                A Soul Chat is a deeply personal, intuitive session where I
+                tune into the frequency of the Mother and connect directly
+                with your Higher Self — becoming a bridge and a vessel for
+                your soul to speak. Together, we explore whatever is most
+                alive for you. Each session is unique, unscripted, and shaped
                 entirely by what wants to come through.
               </p>
 

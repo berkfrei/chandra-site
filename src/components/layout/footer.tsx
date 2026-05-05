@@ -40,9 +40,6 @@ export default function Footer() {
               Chandra
             </span>
           </p>
-          <p className="mt-8 text-[0.68rem] uppercase tracking-[0.22em] text-brown-mid/80">
-            Draper, Utah &nbsp;·&nbsp; Est. 2026
-          </p>
         </div>
 
         {/* Center — Nav */}
