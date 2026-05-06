@@ -9,7 +9,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@next/swc-linux-arm64-gnu": "^16.2.4",
     "@stripe/stripe-js": "^8.11.0",
     "@supabase/supabase-js": "^2.99.3",
     "date-fns": "^4.1.0",
@@ -31,5 +30,8 @@
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "optionalDependencies": {
+    "@next/swc-linux-arm64-gnu": "^16.2.4"
   }
 }
