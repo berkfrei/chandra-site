@@ -139,39 +139,6 @@ export default function DoulaPage() {
       </section>
 
       {/* ============================================
-          PULL QUOTE — sacred breath
-          ============================================ */}
-      <section className="relative overflow-hidden bg-parchment px-6 py-28 lg:px-10 lg:py-36">
-        <div
-          className="pointer-events-none absolute inset-0"
-          aria-hidden="true"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 50%, rgba(184, 151, 106, 0.16) 0%, transparent 60%)",
-          }}
-        />
-        <div className="relative mx-auto max-w-2xl text-center">
-          <Reveal>
-            <div className="flex justify-center text-gold animate-soft-pulse">
-              <Sigil size={22} />
-            </div>
-            <p className="text-display mt-10 text-3xl italic leading-[1.3] text-brown-deep md:text-4xl lg:text-5xl">
-              Your body knows.
-              <br />
-              Your baby knows.
-              <br />
-              <span className="text-terracotta-deep">
-                And you were never meant to walk it alone.
-              </span>
-            </p>
-            <div className="mt-12 flex justify-center text-gold/70">
-              <Sigil size={18} />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ============================================
           HOW I SUPPORT YOU — editorial 2-col register
           ============================================ */}
       <section className="px-6 py-28 lg:px-10 lg:py-36">
