@@ -8,6 +8,10 @@ import Image from "next/image";
 
 const supportWays = [
   {
+    title: "Prenatal Support",
+    body: "We begin working together well before birth — building trust, preparing your body and energy, and creating a birth vision that feels aligned.",
+  },
+  {
     title: "Energetic Support",
     body: "I tune into your energy field and your baby's, holding space for whatever needs to move, clear, or open during this sacred time.",
   },
@@ -18,10 +22,6 @@ const supportWays = [
   {
     title: "Ritual & Presence",
     body: "Birth is a threshold. I bring ritual, prayer, and embodied presence to honor the sacredness of what your body is doing.",
-  },
-  {
-    title: "Prenatal Support",
-    body: "We begin working together well before birth — building trust, preparing your body and energy, and creating a birth vision that feels aligned.",
   },
   {
     title: "Birth Presence",
