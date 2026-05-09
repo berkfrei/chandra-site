@@ -37,8 +37,7 @@ export default function OfferingsPage() {
         <Reveal variant="soft" delay={300}>
           <p className="mx-auto mt-10 max-w-xl font-serif text-xl italic leading-relaxed text-brown-warm md:text-2xl">
             All of my offerings share one intention: to help you reconnect to
-            the voice of your soul and the wisdom you already carry — and to
-            walk beside you as you find your way back to yourself.
+            the voice of your soul and the wisdom you already carry.
           </p>
         </Reveal>
       </section>
