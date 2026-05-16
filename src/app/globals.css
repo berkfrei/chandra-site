@@ -3,7 +3,7 @@
 /* ============================================
    DESIGN TOKENS
    ============================================ */
-@theme inline {
+@theme {
   --color-cream: #F2E4CE;
   --color-cream-dark: #E2D0B5;
   --color-parchment: #F7EDDF;
@@ -25,6 +25,40 @@
 
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Jost', 'Helvetica Neue', sans-serif;
+}
+
+/* ============================================
+   DARK THEME — candlelit night
+   ============================================ */
+[data-theme="dark"] {
+  /* surfaces — was light, now deep night-brown */
+  --color-cream: #1A140F;
+  --color-cream-dark: #2A2018;
+  --color-parchment: #221912;
+  --color-sand: #2E2419;
+
+  /* type — was dark, now warm cream */
+  --color-brown-deep: #F2E4CE;
+  --color-brown-warm: #D4C5B2;
+  --color-brown-mid: #A89376;
+  --color-brown-ink: #FAF1DF;
+
+  /* accents — lifted so they glow on dark */
+  --color-terracotta: #D89077;
+  --color-terracotta-light: #E8B59E;
+  --color-terracotta-deep: #E3A484;
+  --color-clay: #CC9885;
+  --color-sage: #B5C2A5;
+  --color-sage-muted: #CDD6BE;
+  --color-gold: #D4BC96;
+  --color-gold-light: #EDD8B2;
+  --color-dusk: #6A4A45;
+  --color-ember: #BF5C42;
+}
+
+/* In dark mode, the grain overlay should lighten — not darken */
+[data-theme="dark"] body::after {
+  mix-blend-mode: screen;
 }
 
 /* ============================================

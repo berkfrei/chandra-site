@@ -23,13 +23,36 @@ export const metadata: Metadata = {
     "Reconnect to the wisdom your soul already carries. Chandra offers channeling sessions, doula support, and guided meditation to help you return to yourself.",
 };
 
+const themeInitScript = `
+(function() {
+  try {
+    var saved = localStorage.getItem('theme');
+    var theme;
+    if (saved === 'light' || saved === 'dark') {
+      theme = saved;
+    } else {
+      var h = new Date().getHours();
+      theme = (h >= 7 && h < 19) ? 'light' : 'dark';
+    }
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${jost.variable} antialiased`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${cormorant.variable} ${jost.variable} antialiased`}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-screen">
         <Nav />
         <main>{children}</main>

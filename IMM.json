@@ -1,0 +1,14 @@
+{
+  "slug": "chandra",
+  "name": "Chandra Frei",
+  "domain": "chandrafrei.com",
+  "description": "doula booking & content site",
+  "provisionedAt": "2026-05-05T19:30:00Z",
+  "fromRepo": "git@github.com:berkfrei/chandra-site.git",
+  "email": "chandrafrei@gmail.com",
+  "terminal": {
+    "user": "berk",
+    "url": "https://chandra.itsmanmade.studio",
+    "port": 7002
+  }
+}

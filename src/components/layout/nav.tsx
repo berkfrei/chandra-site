@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Button from "@/components/ui/button";
+import ThemeToggle from "@/components/ui/theme-toggle";
 
 const links = [
   { label: "Home", href: "/" },
@@ -78,7 +79,8 @@ export default function Nav() {
           </ul>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
+          <div className="hidden items-center gap-3 md:flex">
+            <ThemeToggle />
             <Button href="/book" variant="default">
               Book a Session
             </Button>
@@ -131,7 +133,7 @@ export default function Nav() {
           })}
         </ul>
 
-        <div className="mt-12">
+        <div className="mt-12 flex flex-col items-center gap-6">
           <Button
             href="/book"
             variant="default"
@@ -139,6 +141,7 @@ export default function Nav() {
           >
             Book a Session
           </Button>
+          <ThemeToggle />
         </div>
       </div>
     </>
