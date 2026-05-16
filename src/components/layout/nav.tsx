@@ -86,23 +86,26 @@ export default function Nav() {
             </Button>
           </div>
 
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="relative z-50 flex h-8 w-8 flex-col items-center justify-center gap-[5px] md:hidden"
-            aria-label="Toggle menu"
-          >
-            <span
-              className={`block h-px w-5 bg-brown-deep transition-all duration-300 ${
-                menuOpen ? "translate-y-[3px] rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block h-px w-5 bg-brown-deep transition-all duration-300 ${
-                menuOpen ? "-translate-y-[3px] -rotate-45" : ""
-              }`}
-            />
-          </button>
+          {/* Mobile: theme toggle + hamburger */}
+          <div className="relative z-50 flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex h-8 w-8 flex-col items-center justify-center gap-[5px]"
+              aria-label="Toggle menu"
+            >
+              <span
+                className={`block h-px w-5 bg-brown-deep transition-all duration-300 ${
+                  menuOpen ? "translate-y-[3px] rotate-45" : ""
+                }`}
+              />
+              <span
+                className={`block h-px w-5 bg-brown-deep transition-all duration-300 ${
+                  menuOpen ? "-translate-y-[3px] -rotate-45" : ""
+                }`}
+              />
+            </button>
+          </div>
         </nav>
       </header>
 
