@@ -116,7 +116,7 @@ export default function Home() {
                 <Button href="/book" variant="filled">
                   Book a Session
                 </Button>
-                <Button href="/offerings" variant="ghost">
+                <Button href="#offerings" variant="ghost">
                   Explore Offerings
                 </Button>
               </div>
@@ -186,7 +186,7 @@ export default function Home() {
       {/* ============================================
           OFFERINGS — editorial numbered entries
           ============================================ */}
-      <section className="px-6 py-28 lg:px-10 lg:py-40">
+      <section id="offerings" className="scroll-mt-24 px-6 py-28 lg:px-10 lg:py-40">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <p className="u-running-head text-center text-brown-mid">
