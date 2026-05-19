@@ -106,8 +106,8 @@ export default function Home() {
                 className="animate-fade-up text-base leading-relaxed text-brown-warm md:text-[1.05rem]"
                 style={{ animationDelay: "1200ms" }}
               >
-                Channeling, sacred support, and soul-deep guidance for those
-                ready to come home to themselves.
+                Channeling, sacred doula support, and soul-deep guidance for
+                those ready to come home to themselves.
               </p>
               <div
                 className="animate-fade-up mt-9 flex flex-wrap items-center gap-5"
