@@ -321,54 +321,29 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <div className="mt-20 space-y-20 md:space-y-24">
-            {[
-              {
-                quote:
-                  "Chandra held space for me in a way no one ever had. I left our session feeling like I'd been handed back a piece of myself I didn't know I'd lost.",
-                name: "Mara T.",
-                align: "left" as const,
-              },
-              {
-                quote:
-                  "I came in with so much noise in my head. By the end, there was just… stillness. And clarity I hadn't felt in years.",
-                name: "Devi L.",
-                align: "right" as const,
-              },
-            ].map((t, i) => (
-              <Reveal key={i} variant="rise" delay={i * 120}>
-                <blockquote
-                  className={`mx-auto max-w-2xl ${
-                    t.align === "right" ? "md:ml-auto md:text-right" : ""
-                  }`}
+          <div className="mt-20">
+            <Reveal variant="rise">
+              <blockquote className="mx-auto max-w-2xl text-center">
+                <p
+                  aria-hidden="true"
+                  className="font-serif text-6xl leading-none text-terracotta/40"
                 >
-                  <p
-                    aria-hidden="true"
-                    className={`font-serif text-6xl leading-none text-terracotta/40 ${
-                      t.align === "right" ? "md:text-right" : ""
-                    }`}
-                  >
-                    &ldquo;
-                  </p>
-                  <p className="mt-2 font-serif text-2xl italic leading-relaxed text-cream/90 md:text-3xl">
-                    {t.quote}
-                  </p>
-                  <footer className="mt-8 flex items-center gap-3 text-[0.72rem] uppercase tracking-[0.2em] text-gold-light/80">
-                    {t.align === "right" ? (
-                      <span className="ml-auto flex items-center gap-3">
-                        {t.name}
-                        <span className="block h-px w-8 bg-current opacity-60" />
-                      </span>
-                    ) : (
-                      <>
-                        <span className="block h-px w-8 bg-current opacity-60" />
-                        {t.name}
-                      </>
-                    )}
-                  </footer>
-                </blockquote>
-              </Reveal>
-            ))}
+                  &ldquo;
+                </p>
+                <p className="mt-2 font-serif text-2xl italic leading-relaxed text-cream/90 md:text-3xl">
+                  Chandra is the light that guides you home when you feel lost
+                  in the uncertainty of life. The way she allows your soul to
+                  fully come through is unlike anything I have ever
+                  experienced. She gently guides you back to remembering who
+                  you are and the path your soul came here to walk.
+                </p>
+                <footer className="mt-8 flex items-center justify-center gap-3 text-[0.72rem] uppercase tracking-[0.2em] text-gold-light/80">
+                  <span className="block h-px w-8 bg-current opacity-60" />
+                  Sharn
+                  <span className="block h-px w-8 bg-current opacity-60" />
+                </footer>
+              </blockquote>
+            </Reveal>
           </div>
         </div>
       </section>
