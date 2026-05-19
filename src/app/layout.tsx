@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     "Reconnect to the wisdom your soul already carries. Chandra offers channeling sessions, doula support, and guided meditation to help you return to yourself.",
 };
 
+// Sunrise/sunset hours by month at ~40°N (continental US average).
+// Used to pick a default theme when the visitor has no saved preference.
 const themeInitScript = `
 (function() {
   try {
@@ -31,8 +33,12 @@ const themeInitScript = `
     if (saved === 'light' || saved === 'dark') {
       theme = saved;
     } else {
-      var h = new Date().getHours();
-      theme = (h >= 7 && h < 19) ? 'light' : 'dark';
+      var sunrise = [7, 7, 7, 6, 6, 5, 6, 6, 7, 7, 7, 7];
+      var sunset  = [17, 18, 19, 20, 20, 21, 21, 20, 19, 18, 17, 16];
+      var d = new Date();
+      var h = d.getHours();
+      var m = d.getMonth();
+      theme = (h < sunrise[m] || h >= sunset[m]) ? 'dark' : 'light';
     }
     document.documentElement.setAttribute('data-theme', theme);
   } catch (e) {}
