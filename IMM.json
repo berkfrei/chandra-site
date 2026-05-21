@@ -1,7 +1,7 @@
 {
   "slug": "chandra",
   "name": "Chandra Frei",
-  "domain": "chandrafrei.com",
+  "domain": "chandra.guide",
   "description": "doula booking & content site",
   "provisionedAt": "2026-05-05T19:30:00Z",
   "fromRepo": "git@github.com:berkfrei/chandra-site.git",
