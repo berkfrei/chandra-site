@@ -6,6 +6,7 @@ import Sigil from "@/components/ui/sigil";
 import Marquee from "@/components/ui/marquee";
 import WordReveal from "@/components/ui/word-reveal";
 import Parallax from "@/components/ui/parallax";
+import EgyptCountdown from "@/components/ui/egypt-countdown";
 
 const offerings = [
   {
@@ -182,6 +183,47 @@ export default function Home() {
           </span>
         </Marquee>
       </div>
+
+      {/* ============================================
+          EGYPT 2027 — the pilgrimage Chandra co-hosts with Ellie, on its
+          own site. ?ref=chandra credits her site in the guest list.
+          ============================================ */}
+      <section className="px-6 pt-24 lg:px-10 lg:pt-32">
+        <div className="mx-auto max-w-6xl">
+          <Reveal>
+            <a href="https://egypt-retreat.vercel.app/?ref=chandra" className="group grid overflow-hidden border border-cream-dark md:grid-cols-12">
+              <div className="relative min-h-[16rem] md:col-span-7 md:min-h-[26rem]">
+                <Image
+                  src="/egypt/temple-circle.jpg"
+                  alt="Women in ceremony on the stone floor of a carved temple chamber in Egypt"
+                  fill
+                  sizes="(min-width: 768px) 58vw, 100vw"
+                  className="object-cover object-[50%_40%] transition-transform duration-700 group-hover:scale-[1.02]"
+                />
+              </div>
+              <div className="flex flex-col justify-between gap-8 bg-parchment p-8 md:col-span-5 md:p-12">
+                <p className="u-running-head text-brown-mid">Pilgrimage · Egypt · Feb 5–14, 2027</p>
+                <div className="space-y-4">
+                  <h2 className="font-serif text-4xl leading-[1.05] text-brown-deep md:text-5xl">
+                    A Sacred Journey of Remembrance
+                  </h2>
+                  <p className="font-serif text-xl italic leading-snug text-brown-warm">
+                    Ten days of ceremony, song and soul remembrance in the temples and on the Nile, with my sister Ellie.
+                  </p>
+                </div>
+                <div className="flex items-center justify-between border-t border-cream-dark pt-5">
+                  <span className="font-sans text-[0.7rem] uppercase tracking-[0.18em] text-terracotta-deep">
+                    <EgyptCountdown />
+                  </span>
+                  <span className="font-sans text-[0.7rem] uppercase tracking-[0.18em] text-brown-deep transition-colors duration-500 group-hover:text-terracotta-deep">
+                    See the journey →
+                  </span>
+                </div>
+              </div>
+            </a>
+          </Reveal>
+        </div>
+      </section>
 
       {/* ============================================
           OFFERINGS — editorial numbered entries

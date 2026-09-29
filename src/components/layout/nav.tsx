@@ -11,6 +11,7 @@ const links = [
   { label: "About", href: "/about" },
   { label: "Soul Work", href: "/offerings" },
   { label: "Doula", href: "/doula" },
+  { label: "Egypt 2027", href: "https://egypt-retreat.vercel.app/?ref=chandra" },
   { label: "Contact", href: "/contact" },
 ];
 
